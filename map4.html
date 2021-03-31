@@ -59,11 +59,117 @@
             margin: 20px 0;
             /* display: none; */
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #side_bar {
+            display: flex;
+            background: #000;
+        }
+
+        .location {
+            /*   min-height:100%; */
+            height: 700px;
+            width: 460px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            /*   background: #a0d; */
+            background-size: cover;
+            background-blend-mode: multiply;
+        }
+
+        .loc-1 {
+            background: url(https://images.unsplash.com/photo-1617097288997-861d70c2cd2d?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNnx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60) rgba(0, 0, 0, 0.5) no-repeat;
+
+            /*   background: url(https://source.unsplash.com/460x700/?nature,water) rgba(0, 0, 0, 0.5) no-repeat; */
+        }
+
+        .loc-2 {
+            /*   min-height:100%;  */
+            background: url(https://images.unsplash.com/photo-1617121361721-618914459dc8?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60) rgba(0, 0, 0, 0.5) no-repeat;
+            /*   https://source.unsplash.com/460x700/?daily */
+        }
+
+        .loc-3 {
+            background: url(https://images.unsplash.com/photo-1617096259934-a44d708d975c?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzOHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60) rgba(0, 0, 0, 0.5) no-repeat;
+            /*   https://source.unsplash.com/460x700/?landscape */
+        }
+
+        .loc-4 {
+            background: url(https://images.unsplash.com/photo-1617102654410-94f143860636?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60) rgba(0, 0, 0, 0.5) no-repeat;
+            /*   https://source.unsplash.com/460x700/?water */
+        }
+
+        .location-info {
+            background: rgba(0, 0, 0, 0.83);
+            padding: 28px 20px;
+        }
+
+        .location-info h2 {
+            text-transform: capitalize;
+            margin: 0 0 12px 0;
+            padding: 0;
+        }
+
+        .location-info p {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map_canvas .location-info {
+            background: transparent;
+            padding: 8px;
+        }
+
+        @media screen and (max-width: 1024px) {
+            #side_bar {
+                flex-direction: row;
+                flex-wrap: wrap;
+                width: 100%;
+            }
+
+            .location {
+                height: 100%;
+                width: 50%;
+                justify-content: flex-end;
+                min-height: 400px;
+
+                /*   flex-direction: column; */
+                /*   flex-basis: 100%; */
+                /*   flex: 1; */
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            #side_bar {
+                flex-direction: column;
+            }
+
+            .location {
+                background-size: cover;
+                height: 100%;
+                width: 100%;
+                justify-content: flex-end;
+                min-height: 400px;
+            }
+        }
     </style>
 </head>
 
 <body>
-
     <input id="pac-input" class="controls" type="text" placeholder="City, State or Zip Code">
     <div id="map_canvas" style="width: 550px; height: 450px"></div>
 
@@ -211,11 +317,13 @@
             });
 
             var point = new google.maps.LatLng(49.1483933, -122.0085082);
-            var marker = createMarker(point, "Seed & Stone<br>Lickman Road, Chilliwack, BC");
+            var marker = createMarker(point, '<div class="location loc-1"><div class="location-info"> <h2>Seed &amp; Stone</h2> <p>Lickman Road, Chilliwack, BC</p></div></div>');
             point = new google.maps.LatLng(49.0327183, -122.8028631);
-            marker = createMarker(point, "Monark Group", "<b>Address Here</b>");
+            marker = createMarker(point, '<div class="location loc-2"><div class="location-info"> <h2>Monark Group</h2> <p>Another Road, Surrey, BC</p></div></div>');
             point = new google.maps.LatLng(49.1946032, -123.0662658);
-            marker = createMarker(point, "Anotehr place", "<b>Entertainment</b><br>123456 <br>111 222 3333");
+            marker = createMarker(point, '<div class="location loc-3"><div class="location-info"> <h2>Third Loc</h2> <p>Test Road, Surrey, BC</p></div></div>');
+            point = new google.maps.LatLng(49.0946032, -121.1662658);
+            marker = createMarker(point, '<div class="location loc-4"><div class="location-info"> <h2>4th Loc</h2> <p>New Road, Surrey, BC</p></div></div>');
 
             initSearchBox(map, 'search_store');
 
