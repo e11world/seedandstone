@@ -37,9 +37,11 @@
             font-weight: 300;
         }
 
-        /* #map_canvas {
-            display: none;
-        } */
+        #map_canvas {
+            /* display: none; */
+            width: 550px;
+            height: 450px;
+        }
 
         /* #map_canvas .gm-style>div:first-child {
             border: 4px solid blue;
@@ -77,6 +79,12 @@
             background: #000;
         }
 
+        #side_bar>a {
+            min-width: 460px;
+            width: 25%;
+
+        }
+
         .location {
             /*   min-height:100%; */
             height: 700px;
@@ -87,8 +95,18 @@
             justify-content: flex-end;
 
             /*   background: #a0d; */
-            background-size: cover;
+            /* background-size: cover; */
             background-blend-mode: multiply;
+
+            overflow: hidden;
+        }
+
+        .loc-1,
+        .loc-2,
+        .loc-3,
+        .loc-4 {
+            width: 100%;
+            background-size: cover !important;
         }
 
         .loc-1 {
@@ -113,20 +131,46 @@
             /*   https://source.unsplash.com/460x700/?water */
         }
 
+
         .location-info {
-            background: rgba(0, 0, 0, 0.83);
             padding: 28px 20px;
+            margin-bottom: -83px;
+            transition: all .33s ease;
         }
 
         .location-info h2 {
             text-transform: capitalize;
             margin: 0 0 12px 0;
             padding: 0;
+            font-size: 40px;
+            font-weight: 500;
+            transition: all .33s ease;
         }
 
         .location-info p {
             margin: 0;
             padding: 0;
+            opacity: 0;
+            position: relative;
+            top: 40px;
+            /*   margin-top: 80px; */
+            transition: all .33s ease;
+
+        }
+
+        .location:hover .location-info {
+            background: rgba(0, 0, 0, 0.83);
+            margin-bottom: 0;
+        }
+
+        .location:hover h2 {
+            font-size: 30px;
+        }
+
+        .location:hover p {
+            top: 0;
+            opacity: 1;
+            transition-delay: .2s;
         }
 
         #map_canvas .location-info {
@@ -165,136 +209,55 @@
                 justify-content: flex-end;
                 min-height: 400px;
             }
+
+            .location .location-info {
+                background: rgba(0, 0, 0, 0.83);
+                margin-bottom: 0;
+            }
+
+            .location h2 {
+                font-size: 30px;
+            }
+
+            .location-info {
+                margin-bottom: 0px;
+            }
+
+            .location-info p {
+                top: 0;
+                opacity: 1;
+            }
         }
     </style>
 </head>
 
 <body>
-    <h2>hi</h2>
-    <input id="pac-input" class="controls" type="text" placeholder="City, State or Zip Code">
-    <div id="map_canvas" style="width: 550px; height: 450px"></div>
+    <!-- <input id="pac-input" class="controls" type="text" placeholder="City, State or Zip Code"> -->
+    <div id="map_canvas"></div>
+    <br>
+    <div id="s_latitude">s_latitude</div>
+    <div id="s_longitude">s_longitude</div>
+    <div id="results"></div>
 
     <input id="search_store" class="controls" type="text" placeholder="City, State or Zip Code">
+
+
     <div id="side_bar"></div>
 
-    <!-- <div class="tax-wrap">
-        <label>Tax Exempt</label><br />
-        <input name="field" id="field" type="text" value="" class="delprefix">
-    </div>
-    <div class="hide-tax">
-        Hide this
-    </div> -->
+
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script>
 
-        $(document).ready(function () {
-            // var div = $("#map_canvas");
-            // div.hide();
-            // $("#pac-input").on("focus blur", function (event) {
-            //     div.toggle();
-            // });
-
-            // $("#pac-input").on("focus", function () {
-            //     div.css({ "display": "block" });
-            // }).on("blur", function () {
-            //     div.css({ "display": "none" });
-            // });
-
-
-
-
-            // $("#pac-input").focus(function () {
-            //     $(div).show('slow');
-            //     //return false;
-            // });
-
-
-            // $('#pac-input').blur(function () {
-            //     if (!$(this).val()) {
-            //         $(div).hide('slow');
-            //     }
-            // });
-
-
-            // $("#pac-input").focus(function () {
-            //     $('#map_canvas').show('slow');
-            //     //return false;
-            // });
-
-
-            // $('#pac-input').blur(function () {
-            //     if (!$(this).val()) {
-            //         $('#map_canvas').hide('slow');
-            //     }
-            // });
-
-
-
-            // $(".tax-wrap input").focus(function () {
-            //     $('.hide-tax').show('slow');
-            //     //return false;
-            // });
-
-
-            // $('.tax-wrap input').blur(function () {
-            //     if (!$(this).val()) {
-            //         $('.hide-tax').hide('slow');
-            //     }
-            // });
-
-            // var $mail = $("#search_store");
-
-            // $("#pac-input").keyup(function () {
-            //     $mail.val(this.value);
-            // });
-            // $("#pac-input").blur(function () {
-            //     $mail.val(this.value);
-            // });
-        });
-
-        // var input = document.getElementById('search_store');
-        // var autocomplete = new google.maps.places.Autocomplete(input, {
-        //     types: ["address"]
-        // });
-        // $(function () {
-
-        //     autocomplete.addListener('place_changed', fillInAddress);
-
-        //     $("#search_store").focusin(function () {
-        //         $(document).keypress(function (e) {
-        //             if (e.which == 13) {
-        //                 infowindow.close();
-
-        //             }
-        //         });
-        //     });
-        // });
-
-        // function fillInAddress() {
-        //     // Get the place details from the autocomplete object.
-        //     var place = autocomplete.getPlace();
-        //     if (typeof place.address_components[0] !== "undefined") {
-        //         $(input).val(place.address_components[0].long_name);
-        //     }
-        // }
-
-    </script>
 
     <script
-        src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=false&libraries=places&key=AIzaSyDtboj1LNEFWwzejt978U0zS7odF3jFwHc"></script>
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDtboj1LNEFWwzejt978U0zS7odF3jFwHc"></script>
+
+
+
     <script>
 
-
-        // window.onload = function () {
-        //     var src = document.getElementById("pac-input"),
-        //         dst = document.getElementById("search_store");
-        //     src.addEventListener("input", function () {
-        //         dst.value = src.value;
-        //     });
-        // };
 
 
         var side_bar_html = "";
@@ -313,22 +276,116 @@
 
         function initialize() {
 
-            google.maps.event.addListener(map, 'click', function () {
-                infowindow.close();
+            // google.maps.event.addListener(map, 'click', function () {
+            //     infowindow.close();
+            // });
+
+            var point1 = new google.maps.LatLng(49.1483933, -122.0085082);
+            var marker = createMarker(point1, '<div class="location loc-1"><div class="location-info"> <h2>Seed &amp; Stone</h2> <p>Lickman Road, Chilliwack, BC</p></div></div>', '<span><b>Seed &amp; Stone</b><br /><em>address goes here</em><span>');
+            point2 = new google.maps.LatLng(49.0327183, -122.8028631);
+            marker = createMarker(point2, '<div class="location loc-2"><div class="location-info"> <h2>Monark Group</h2> <p>Another Road, Surrey, BC</p></div></div>', '<span><b>Monark Group</b><br /><em>address goes here</em><span>');
+            point3 = new google.maps.LatLng(49.1946032, -123.0662658);
+            marker = createMarker(point3, '<div class="location loc-3"><div class="location-info"> <h2>Third Loc</h2> <p>Test Road, Surrey, BC</p></div></div>', '<span><b>Third Loc</b><br /><em>address goes here</em><span>');
+            point4 = new google.maps.LatLng(49.2458283, -123.1175777);
+            marker = createMarker(point4, '<div class="location loc-4"><div class="location-info"> <h2>4th Loc</h2> <p>New Road, Surrey, BC</p></div></div>', '<span><b>4th Loc</b><br /><em>address goes here</em><span>');
+
+
+
+            var address = (document.getElementById('search_store'));
+
+            var autocomplete = new google.maps.places.Autocomplete(address);
+            autocomplete.setTypes(['geocode']);
+            google.maps.event.addListener(autocomplete, 'place_changed', function () {
+                var place = autocomplete.getPlace();
+                if (!place.geometry) {
+                    return;
+                }
+
+                var address = '';
+                if (place.address_components) {
+                    address = [
+                        (place.address_components[0] && place.address_components[0].short_name || ''),
+                        (place.address_components[1] && place.address_components[1].short_name || ''),
+                        (place.address_components[2] && place.address_components[2].short_name || '')
+                    ].join(' ');
+                }
+                /*********************************************************************/
+                /* var address contain your autocomplete address *********************/
+                /* place.geometry.location.lat() && place.geometry.location.lat() ****/
+                /* will be used for current address latitude and longitude************/
+                /*********************************************************************/
+                document.getElementById('s_latitude').innerHTML = place.geometry.location.lat();
+                document.getElementById('s_longitude').innerHTML = place.geometry.location.lng();
+
+
+
+
+                let latMain = place.geometry.location.lat();
+                let lngMain = place.geometry.location.lng();
+
+                console.log(latMain, lngMain);
+
+
+
+
+                /* 
+                
+                
+                
+                                var cities = [
+                                    ['city1', 49.1483933, -122.0085082],
+                                    ['city2', 49.0327183, -122.8028631],
+                                    ['city3', 49.1946032, -123.0662658],
+                                    ['city3', 49.2458283, -123.1175777]
+                                ];
+                
+                
+                                var dist = calculateDistance(cities[0][1], cities[0][2], cities[1][1], cities[1][2], 'K');
+                
+                                // alert(dist);
+                                console.log(dist);
+                                console.log(cities[0][2].dist);
+                
+                                function calculateDistance(lat1, lon1, lat2, lon2, unit) {
+                                    var radlat1 = Math.PI * lat1 / 180
+                                    var radlat2 = Math.PI * lat2 / 180
+                                    var radlon1 = Math.PI * lon1 / 180
+                                    var radlon2 = Math.PI * lon2 / 180
+                                    var theta = lon1 - lon2
+                                    var radtheta = Math.PI * theta / 180
+                                    var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+                                    dist = Math.acos(dist)
+                                    dist = dist * 180 / Math.PI
+                                    dist = dist * 60 * 1.1515
+                                    if (unit == "K") { dist = dist * 1.609344 }
+                                    if (unit == "N") { dist = dist * 0.8684 }
+                                    return dist + unit
+                                }
+                
+                
+                 */
+
+
+
+
+
+
+
+
+
+
+
+                // console.log(address, place.geometry.location.lng(), place.geometry.location.lat());
             });
 
-            var point = new google.maps.LatLng(49.1483933, -122.0085082);
-            var marker = createMarker(point, '<div class="location loc-1"><div class="location-info"> <h2>Seed &amp; Stone</h2> <p>Lickman Road, Chilliwack, BC</p></div></div>');
-            point = new google.maps.LatLng(49.0327183, -122.8028631);
-            marker = createMarker(point, '<div class="location loc-2"><div class="location-info"> <h2>Monark Group</h2> <p>Another Road, Surrey, BC</p></div></div>');
-            point = new google.maps.LatLng(49.1946032, -123.0662658);
-            marker = createMarker(point, '<div class="location loc-3"><div class="location-info"> <h2>Third Loc</h2> <p>Test Road, Surrey, BC</p></div></div>');
-            point = new google.maps.LatLng(49.0946032, -121.1662658);
-            marker = createMarker(point, '<div class="location loc-4"><div class="location-info"> <h2>4th Loc</h2> <p>New Road, Surrey, BC</p></div></div>');
 
             initSearchBox(map, 'search_store');
 
         }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+
+
 
 
         var infowindow = new google.maps.InfoWindow({
@@ -341,17 +398,28 @@
 
         }
 
+
         function initSearchBox(map, controlId) {
+
             // Create the search box and link it to the UI element.    
             var input = (document.getElementById(controlId));
-            map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-            var searchBox = new google.maps.places.SearchBox(input);
+            // show input inside map
+            // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+            var searchBox = new google.maps.places.SearchBox(input, {
+
+                // types: ['geocode'],
+                types: ['store'],
+                rankBy: google.maps.places.RankBy.DISTANCE
+            });
 
             // [START region_getplaces]    
             // Listen for the event fired when the user selects an item from the    
             // pick list. Retrieve the matching places for that item.    
             google.maps.event.addListener(searchBox, 'places_changed', function () {
                 var places = searchBox.getPlaces();
+                // console.log(places);
+                // side_bar_html = google.maps.places.RankBy.DISTANCE;
 
                 if (places.length == 0) {
                     return;
@@ -359,17 +427,18 @@
 
                 //get first place    
                 var place = places[0];
-
+                //console.log(e, data);
+                // console.log(places);
 
                 var infowindow = new google.maps.InfoWindow({
                     size: new google.maps.Size(150, 50),
                     content: place.info
                 });
 
-
-                // put the assembled side_bar_html contents into the side_bar div    
                 document.getElementById("side_bar").innerHTML = side_bar_html;
+
                 t -= 1; //This is so if you search again, it doesn't display again in sidebar    
+
 
 
                 map.fitBounds(place.geometry.viewport);
@@ -379,10 +448,16 @@
         // A function to create the marker and set up the event window function     
         function createMarker(latlng, name, html) {
             var contentString = html;
+            // name = google.maps.places.RankBy.DISTANCE;
+
             var marker = new google.maps.Marker({
                 position: latlng,
+
+                // position: map.location,
+                animation: google.maps.Animation.DROP,
                 map: map,
                 //zIndex: Math.round(latlng.lat()*-100000)<<5    
+
             });
 
             google.maps.event.addListener(marker, 'click', function () {
@@ -392,13 +467,16 @@
 
             // save the info we need to use later for the side_bar    
             gmarkers.push(marker);
+
+            // document.getElementById('results').value = marker.geometry.lat();
+
             // add a line to the side_bar html    
             side_bar_html += '<a href="javascript:myclick(' + (gmarkers.length - 1) + ')">' + name + '<\/a><br>';
         }
 
+
         google.maps.event.addListenerOnce(map, 'idle', initialize);
     </script>
-
 </body>
 
 </html>
