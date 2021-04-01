@@ -1,0 +1,83 @@
+<html>
+
+<head>
+    <title>Getting The Nearest Places For A Location In Google Map Using Google MAP API</title>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDtboj1LNEFWwzejt978U0zS7odF3jFwHc"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.1.min.js"></script>
+</head>
+
+<body>
+    <div id="map-canvas" style="height: 100%;"></div>
+    <script type="text/javascript">
+        var map;
+        var infowindow;
+        var service;
+        var mylocation = new google.maps.LatLng(6.928940573589038, 79.87219331750487);
+        //Set Your Current Location to 'mylocation'
+        getGooglePlaces();
+
+        function getGooglePlaces(lat, lng) {
+            //load the map
+            map = new google.maps.Map(document.getElementById('map-canvas'), {
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                center: mylocation,
+                zoom: 15
+            });
+
+            infowindow = new google.maps.InfoWindow();
+            service = new google.maps.places.PlacesService(map);
+
+            setCurrentLocation();
+
+            var request = {
+                location: mylocation,
+                rankBy: google.maps.places.RankBy.DISTANCE,
+                types: ['train_station', 'bus_station', 'subway_station']
+                //More Types From
+                //https://developers.google.com/places/supported_types
+            };
+            service.search(request, callback_googlePlaces);
+        }
+
+        function setCurrentLocation() {
+            var marker = new google.maps.Marker({
+                map: map,
+                position: mylocation,
+                icon: 'https://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=O|FFFF00|000000',
+                animation: google.maps.Animation.DROP
+            });
+
+            google.maps.event.addListener(marker, 'click', function () {
+                var content = '<strong>Current Place</strong>';
+                infowindow.setContent(content);
+                infowindow.open(map, this);
+            });
+        }
+
+        function callback_googlePlaces(results, status) {
+            if (status == google.maps.places.PlacesServiceStatus.OK) {
+                for (var i = 0; i < results.length; i++) {
+                    createMarker(results[i]);
+                }
+            }
+        }
+
+        function createMarker(place) {
+            var marker = new google.maps.Marker({
+                map: map,
+                position: place.geometry.location,
+                animation: google.maps.Animation.DROP
+            });
+
+            google.maps.event.addListener(marker, 'click', function () {
+                var content = '<strong>' + place.name + '</strong><br/>' + '<span>' + place.vicinity + '</span><br/>' + '<span>' + place.types[0] + '</span><br/>' + '<span>' + google.maps.geometry.spherical.computeDistanceBetween(mylocation, place.geometry.location).toFixed(2) + ' meters</span>';
+                infowindow.setContent(content);
+                infowindow.open(map, this);
+            });
+        }
+
+    </script>
+</body>
+
+</html>
