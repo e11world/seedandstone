@@ -295,92 +295,11 @@
 
             // new stuff start
 
-            var address = (document.getElementById('search_store'));
-
-            var autocomplete = new google.maps.places.Autocomplete(address);
-            autocomplete.setTypes(['geocode']);
-            google.maps.event.addListener(autocomplete, 'place_changed', function () {
-                var place = autocomplete.getPlace();
-                if (!place.geometry) {
-                    return;
-                }
-
-                var address = '';
-                if (place.address_components) {
-                    address = [
-                        (place.address_components[0] && place.address_components[0].short_name || ''),
-                        (place.address_components[1] && place.address_components[1].short_name || ''),
-                        (place.address_components[2] && place.address_components[2].short_name || '')
-                    ].join(' ');
-                }
-                /*********************************************************************/
-                /* var address contain your autocomplete address *********************/
-                /* place.geometry.location.lat() && place.geometry.location.lat() ****/
-                /* will be used for current address latitude and longitude************/
-                /*********************************************************************/
-                document.getElementById('s_latitude').innerHTML = place.geometry.location.lat();
-                document.getElementById('s_longitude').innerHTML = place.geometry.location.lng();
-
-
-
-
-                let latMain = place.geometry.location.lat();
-                let lngMain = place.geometry.location.lng();
-
-                console.log(latMain, lngMain);
-
-
-
-
-                /* 
-                
-                
-                
-                    var cities = [
-                        ['city1', 49.1483933, -122.0085082],
-                        ['city2', 49.0327183, -122.8028631],
-                        ['city3', 49.1946032, -123.0662658],
-                        ['city3', 49.2458283, -123.1175777]
-                    ];
-
-
-                    var dist = calculateDistance(cities[0][1], cities[0][2], cities[1][1], cities[1][2], 'K');
-
-                    // alert(dist);
-                    console.log(dist);
-                    console.log(cities[0][2].dist);
-
-                    function calculateDistance(lat1, lon1, lat2, lon2, unit) {
-                        var radlat1 = Math.PI * lat1 / 180
-                        var radlat2 = Math.PI * lat2 / 180
-                        var radlon1 = Math.PI * lon1 / 180
-                        var radlon2 = Math.PI * lon2 / 180
-                        var theta = lon1 - lon2
-                        var radtheta = Math.PI * theta / 180
-                        var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
-                        dist = Math.acos(dist)
-                        dist = dist * 180 / Math.PI
-                        dist = dist * 60 * 1.1515
-                        if (unit == "K") { dist = dist * 1.609344 }
-                        if (unit == "N") { dist = dist * 0.8684 }
-                        return dist + unit
-                    }
-                
-                
-                 */
-
-
-                // console.log(address, place.geometry.location.lng(), place.geometry.location.lat());
-            });
-
-
 
 
             // new stuff end
 
             initSearchBox(map, 'search_store');
-
-
 
         }
 
@@ -398,21 +317,15 @@
 
         function initSearchBox(map, controlId) {
 
+
             // Create the search box and link it to the UI element.    
             var input = (document.getElementById(controlId));
 
             // show input inside map
             // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-
-
-            var address = (document.getElementById('search_store'));
-            var autocomplete = new google.maps.places.Autocomplete(address);
-
-
             var searchBox = new google.maps.places.SearchBox(input, {
                 types: ['geocode'],
-                // types: ['store'],
                 rankBy: google.maps.places.RankBy.DISTANCE
             });
 
@@ -441,7 +354,40 @@
                 t -= 1; //This is so if you search again, it doesn't display again in sidebar    
 
                 map.fitBounds(place.geometry.viewport);
+
+                var location = place.geometry.location;
+                var lat = location.lat();
+                var lng = location.lng();
+
+                document.getElementById('s_latitude').innerHTML = lat;
+                document.getElementById('s_longitude').innerHTML = lng;
+
+                // console.log(places.geometry.location.lng());
+
+                // console.log(lat, lng);
+                // GetLatlong();
             });
+
+
+
+
+        }
+
+        function GetLatlong() {
+            var geocoder = new google.maps.Geocoder();
+            var address = document.getElementById('search_store').value;
+
+            geocoder.geocode({
+                'address': address
+            }, function (results, status) {
+
+                if (status == google.maps.GeocoderStatus.OK) {
+                    var latitude = results[0].geometry.location.lat();
+                    var longitude = results[0].geometry.location.lng();
+                }
+            });
+
+            console.log(latitude, '', longitude);
         }
 
         // A function to create the marker and set up the event window function     
@@ -455,7 +401,9 @@
                 map: map,
                 //zIndex: Math.round(latlng.lat()*-100000)<<5    
 
+
             });
+            // console.log(latlng, name, html);
 
             google.maps.event.addListener(marker, 'click', function () {
                 infowindow.setContent(contentString);
