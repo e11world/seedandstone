@@ -4,7 +4,6 @@
 <head>
     <title>test</title>
     <!-- <link rel="stylesheet" type="text/css" href="./style.css" /> -->
-    <!-- <script src="./index.js"></script> -->
     <style>
         #pac-input {
             background-color: #fff;
@@ -250,6 +249,10 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
+    <script type="text/javascript"
+        src="https://raw.githubusercontent.com/lodash/lodash/4.17.15-npm/lodash.min.js"></script>
+
+
 
     <script
         src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDtboj1LNEFWwzejt978U0zS7odF3jFwHc"></script>
@@ -257,7 +260,12 @@
 
 
     <script>
-
+        const cities = [
+            { id: 0, name: 'Chilliwack', longitute: 49.1483933, latitude: -122.0085082 },
+            { id: 2, name: 'Test Surrey', longitute: 49.1946032, latitude: -123.0662658 },
+            { id: 1, name: 'Another Surrey', longitute: 49.0327183, latitude: -122.8028631 },
+            { id: 3, name: 'New Surrey', longitute: 49.2458283, latitude: -123.1175777 }
+        ];
         var side_bar_html = "";
         // arrays to hold copies of the markers and html used by the side_bar   
 
@@ -364,7 +372,77 @@
 
                 // console.log(places.geometry.location.lng());
 
-                // console.log(lat, lng);
+                console.log(lat, lng);
+
+
+
+
+                // function sortLngLat(a, b) {
+                //     var x = a[0] / a[1];
+                //     var y = b[0] / b[1];
+                // }
+                // var sortedArray = cities.sort(sortLngLat);
+                // console.log(sortedArray);
+
+                // var dist = calculateDistance(cities[0][1], cities[0][2], cities[1][1], cities[1][2], 'K');
+
+                // // alert(dist);
+                // console.log(dist);
+                // console.log(cities[0][2].dist);
+
+                function calculateDistance(lat1, lon1, lat2, lon2, unit) {
+                    var radlat1 = Math.PI * lat1 / 180
+                    var radlat2 = Math.PI * lat2 / 180
+                    var radlon1 = Math.PI * lon1 / 180
+                    var radlon2 = Math.PI * lon2 / 180
+                    var theta = lon1 - lon2
+                    var radtheta = Math.PI * theta / 180
+                    var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+                    dist = Math.acos(dist)
+                    dist = dist * 180 / Math.PI
+                    dist = dist * 60 * 1.1515
+                    dist = dist * 1.609344
+                    return dist
+                }
+
+                let distances = [];
+
+                cities.map(city => {
+                    let distance = calculateDistance(city.latitude, city.longitute, lat, lng)
+                    distances.push({ id: city.id, distance })
+                })
+
+                let nearerCity = distances.sort((a, b) => a.distance - b.distance)
+                // for (i = 0; i < cities.length; i++) {
+                //     cities[i]["distance"] = calculateDistance(cities[0]["latitude"], cities[0]["longitute"], cities[i]["latitude"], cities[i]["longitute"], "K");
+                // }
+
+                // cities.sort(function (a, b) {
+                //     return a.distance - b.distance;
+                // });
+                _.orderBy(distances, ['distance']);
+                console.log(nearerCity);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 // GetLatlong();
             });
 
@@ -373,22 +451,22 @@
 
         }
 
-        function GetLatlong() {
-            var geocoder = new google.maps.Geocoder();
-            var address = document.getElementById('search_store').value;
+        // function GetLatlong() {
+        //     var geocoder = new google.maps.Geocoder();
+        //     var address = document.getElementById('search_store').value;
 
-            geocoder.geocode({
-                'address': address
-            }, function (results, status) {
+        //     geocoder.geocode({
+        //         'address': address
+        //     }, function (results, status) {
 
-                if (status == google.maps.GeocoderStatus.OK) {
-                    var latitude = results[0].geometry.location.lat();
-                    var longitude = results[0].geometry.location.lng();
-                }
-            });
+        //         if (status == google.maps.GeocoderStatus.OK) {
+        //             var latitude = results[0].geometry.location.lat();
+        //             var longitude = results[0].geometry.location.lng();
+        //         }
+        //     });
 
-            console.log(latitude, '', longitude);
-        }
+        //     console.log(latitude, '', longitude);
+        // }
 
         // A function to create the marker and set up the event window function     
         function createMarker(latlng, name, html) {
