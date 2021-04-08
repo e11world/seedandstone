@@ -73,4 +73,34 @@ $(document).ready(function () {
         slider.goToNextSlide();
       });
 
+      var count = 1, min=1, max=7;
+      
+      $(".circle-arrow-next").on("click", function(){
+          // if ($(this).hasClass("goToStart")) {
+          //     $(this).parents(".lSSlideWrapper").next().children().first().trigger("click");
+          //     $(this).removeClass("goToStart");
+          //     
+          // }
+
+          // if ($(this).prev().hasClass("goToEnd")) {
+          //     $(this).prev().removeClass("goToEnd")
+          // }
+          
+        if(count<=max) {
+          count += 1;
+          $(".category-number").text( '0' + count).fadeIn();
+          // $(".slider").css('background-position', count +'px 0px');
+          }
+          console.log('next');
+      });
+
+      $(".circle-arrow-prev").on("click", function(){
+          if(count>min){
+            count = count - 1;
+            $(".category-number").text( '0' + count).fadeIn();
+          }
+          // console.log('prev');
+      });
+
+
     });

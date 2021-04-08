@@ -36,6 +36,7 @@ img {
 .categories-slider-container {
   flex: 1;
   max-width: 1200px;
+  background: #333;
 }
 .title-normal {
   font-size: 50px;
@@ -50,6 +51,8 @@ p {
 }
 .category-arrows {
   display: flex;
+  margin-top: 50px;
+  margin-bottom: 80px;
   max-width: 220px;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -59,7 +62,7 @@ p {
   transform-style: preserve-3d;
 }
 .category-indicator {
-  margin-bottom: 20px;
+  margin-bottom: 60px;
 }
 .line-indicator-container {
   /* position: relative; */
