@@ -16,41 +16,58 @@ if ($(window).width() < 768) {       // if width is less than 600px
   // });
 
   // $(".category-img").css("display", "none");
-    
-      var count = 1, min=1, max=7;
+  
+  
+  /*
+  var count = 1, min=1, max=7;
+  
+  $(".circle-arrow-next").on("click", function(){
+      // if ($(this).hasClass("goToStart")) {
+      //     $(this).parents(".lSSlideWrapper").next().children().first().trigger("click");
+      //     $(this).removeClass("goToStart");
+      //     
+      // }
+
+      // if ($(this).prev().hasClass("goToEnd")) {
+      //     $(this).prev().removeClass("goToEnd")
+      // }
       
-      $(".circle-arrow-next").on("click", function(){
-          // if ($(this).hasClass("goToStart")) {
-          //     $(this).parents(".lSSlideWrapper").next().children().first().trigger("click");
-          //     $(this).removeClass("goToStart");
-          //     
-          // }
+    if(count<=max) {
+      count += 1;
+      $(".category-number").text( '0' + count).fadeIn();
+      // $(".slider").css('background-position', count +'px 0px');
+    }
+    console.log('next');
+  });
 
-          // if ($(this).prev().hasClass("goToEnd")) {
-          //     $(this).prev().removeClass("goToEnd")
-          // }
-          
-        if(count<=max) {
-          count += 1;
-          $(".category-number").text( '0' + count).fadeIn();
-          // $(".slider").css('background-position', count +'px 0px');
-        }
-        console.log('next');
-      });
+  $(".circle-arrow-prev").on("click", function(){
+      if(count>min){
+        count = count - 1;
+        $(".category-number").text( '0' + count).fadeIn();
+      }
+      console.log('prev');
+  });
 
-      $(".circle-arrow-prev").on("click", function(){
-          if(count>min){
-            count = count - 1;
-            $(".category-number").text( '0' + count).fadeIn();
-          }
-          console.log('prev');
-      });
+  */
 
+  // var catID = $(".category-number").html();
 
+  // $( ".category-item" ).hover(
+  //   function() {
+  //       $(".category-number").html( $( this ).find("p").html() );
+  //   }, function() {
+  //     $(".category-number").html( catID );
+  //   }
+  // );
 
   $(".category-item")
     .mouseenter(function () {
       $(this).css("zIndex", "9").css("overflow", "visible");
+
+      let desc = $(this).attr('data-id'); //get the description
+      $('.category-number').text(desc);
+      // console.log(desc);
+      // $("#content").text($(this).text());
 
       $(this).prev().css("zIndex", "10");
       $(this)

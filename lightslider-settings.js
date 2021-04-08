@@ -73,6 +73,7 @@ $(document).ready(function () {
         slider.goToNextSlide();
       });
 
+      /*
       var count = 1, min=1, max=7;
       
       $(".circle-arrow-next").on("click", function(){
@@ -101,6 +102,6 @@ $(document).ready(function () {
           }
           // console.log('prev');
       });
-
+    */
 
     });
