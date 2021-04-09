@@ -63,6 +63,7 @@ if ($(window).width() < 768) {       // if width is less than 600px
   $(".category-item")
     .mouseenter(function () {
       $(this).css("zIndex", "9").css("overflow", "visible");
+      // console.log('what');
 
       let desc = $(this).attr('data-id'); //get the description
       $('.category-number').text(desc);
