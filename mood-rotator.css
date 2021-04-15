@@ -486,5 +486,23 @@
 
   .scrollbar {
     overflow-x: hidden;
+    position: relative;
+    overflow-y: scroll;
+    min-height: 280px;
+    height: 70vh;
+    padding: 10px 0 0px 0px;
+    direction: rtl;
+    left: -32px;
+    top: 90px;
+    width: 100%;
+    max-width: 100%;
+  }
+  .product-moods {
+    grid-column-gap: 0px;
+  }
+  .mood-item {
+    margin-right: 0px;
+    padding: 30px;
+    margin-left: 40px;
   }
 }
