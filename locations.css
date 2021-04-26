@@ -204,6 +204,7 @@ input {
   }
   .event-info {
     max-width: 100%;
+    padding-right: 0;
   }
 
   .scrollbar-horizontal::-webkit-scrollbar-button:end:increment {

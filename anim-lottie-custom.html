@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Lottie</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        .lottie {
+            /* width: 100%; */
+            /* height: auto; */
+            width: 100%;
+            height: 100vh;
+        }
+
+        .spacer {
+            min-height: 90vh;
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            place-content: center;
+        }
+
+        .z-top {
+            position: relative;
+            z-index: 3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="spacer">
+        <h3>Hi</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam consequuntur repudiandae distinctio
+            aliquid, consectetur harum excepturi architecto ad omnis aut non, ipsa nobis unde id labore quod
+            accusantium, aperiam recusandae soluta. Facilis iste quo fugiat, saepe quos corporis cum illum, vel ea, quas
+            minus.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam consequuntur repudiandae distinctio
+            aliquid, consectetur harum excepturi architecto ad omnis aut non, ipsa nobis unde id labore quod
+            accusantium, aperiam recusandae soluta. Facilis iste quo fugiat, saepe quos corporis cum illum, vel ea, quas
+            minus.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam consequuntur repudiandae distinctio
+            aliquid, consectetur harum excepturi architecto ad omnis aut non, ipsa nobis unde id labore quod
+            accusantium, aperiam recusandae soluta. Facilis iste quo fugiat, saepe quos corporis cum illum, vel ea, quas
+            minus.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam consequuntur repudiandae distinctio
+            aliquid, consectetur harum excepturi architecto ad omnis aut non, ipsa nobis unde id labore quod
+            accusantium, aperiam recusandae soluta. Facilis iste quo fugiat, saepe quos corporis cum illum, vel ea, quas
+            minus.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam consequuntur repudiandae distinctio
+            aliquid, consectetur harum excepturi architecto ad omnis aut non, ipsa nobis unde id labore quod
+            accusantium, aperiam recusandae soluta. Facilis iste quo fugiat, saepe quos corporis cum illum, vel ea, quas
+            minus.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam consequuntur repudiandae distinctio
+            aliquid, consectetur harum excepturi architecto ad omnis aut non, ipsa nobis unde id labore quod
+            accusantium, aperiam recusandae soluta. Facilis iste quo fugiat, saepe quos corporis cum illum, vel ea, quas
+            minus.</p>
+    </div>
+
+    <section class="lottie">
+        <div id="lottie">
+            <div>
+    </section>
+
+    <div class="spacer2 z-top">
+        <h3>Hi</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam consequuntur repudiandae distinctio
+            aliquid, consectetur harum excepturi architecto ad omnis aut non, ipsa nobis unde id labore quod
+            accusantium, aperiam recusandae soluta. Facilis iste quo fugiat, saepe quos corporis cum illum, vel ea, quas
+            minus.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam consequuntur repudiandae distinctio
+            aliquid, consectetur harum excepturi architecto ad omnis aut non, ipsa nobis unde id labore quod
+            accusantium, aperiam recusandae soluta. Facilis iste quo fugiat, saepe quos corporis cum illum, vel ea, quas
+            minus.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam consequuntur repudiandae distinctio
+            aliquid, consectetur harum excepturi architecto ad omnis aut non, ipsa nobis unde id labore quod
+            accusantium, aperiam recusandae soluta. Facilis iste quo fugiat, saepe quos corporis cum illum, vel ea, quas
+            minus.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam consequuntur repudiandae distinctio
+            aliquid, consectetur harum excepturi architecto ad omnis aut non, ipsa nobis unde id labore quod
+            accusantium, aperiam recusandae soluta. Facilis iste quo fugiat, saepe quos corporis cum illum, vel ea, quas
+            minus.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam consequuntur repudiandae distinctio
+            aliquid, consectetur harum excepturi architecto ad omnis aut non, ipsa nobis unde id labore quod
+            accusantium, aperiam recusandae soluta. Facilis iste quo fugiat, saepe quos corporis cum illum, vel ea, quas
+            minus.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam consequuntur repudiandae distinctio
+            aliquid, consectetur harum excepturi architecto ad omnis aut non, ipsa nobis unde id labore quod
+            accusantium, aperiam recusandae soluta. Facilis iste quo fugiat, saepe quos corporis cum illum, vel ea, quas
+            minus.</p>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.4.2/lottie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+
+
+
+
+    <script>
+
+
+        var animData = {
+            container: document.getElementById('lottie'),
+            // path: 'lottie.json',
+            path: 'https://assets.lottiefiles.com/datafiles/7HMs29Q0NhBUKCp/data.json',
+            renderer: 'svg',
+            loop: false,
+            autoplay: false,
+            name: "animScroll",
+        }, animScroll, tl;
+
+
+        var animScroll = bodymovin.loadAnimation(animData)
+
+
+        animScroll.addEventListener('DOMLoaded', function () {
+            tl = new TimelineMax({ repeat: 0 })
+            tl.to({ frame: 0 }, 1, {
+                frame: animScroll.totalFrames - 1,
+                onUpdate: function () {
+                    animScroll.goToAndStop(Math.round(this.target.frame), true)
+                },
+                Ease: Linear.easeNone
+            })
+
+            var controller = new ScrollMagic.Controller();
+
+            var scene = new ScrollMagic.Scene({
+                triggerElement: ".lottie",
+                offset: 600,
+                duration: 3000
+            }).setTween(tl).setPin("#lottie").addTo(controller);
+
+        })
+
+
+
+
+
+    </script>
+</body>
+
+</html>
