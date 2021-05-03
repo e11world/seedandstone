@@ -1,8 +1,8 @@
 $(document).ready(function () {
-if ($(window).width() < 768) {       // if width is less than 600px
+if ($(window).width() < 800) {       // if width is less than 800px
                // execute mobile function
 } else {    
-  /* the viewport is less than 768 pixels wide */
+  /* the viewport is less than 800 pixels wide */
   // $('.slider').slick();
 
     $(".category-img").css("opacity", "0");

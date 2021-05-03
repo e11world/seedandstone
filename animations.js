@@ -213,7 +213,7 @@ fadeUpOnlyOnScroll
     easing: "easeOutExpo",
     duration: 1400,
     delay: (el, i) => 300 + 30 * i
-  })
+  });
   
 
 // Fade Up Animation and out
@@ -288,6 +288,98 @@ popIn
   });
   
 
+var staggerIn = anime.timeline({
+  loop: false,
+  autoplay: false,
+});
+staggerIn
+  .add({
+    targets: '.best-seller-item.tns-slide-active',
+  // translateY: 0,
+  // delay: anime.stagger(100) // increase delay by 100ms for each elements.
+    translateY: [100,0],
+    opacity: [0,1],
+    easing: "easeOutExpo",
+    duration: 1400,
+    delay: (el, i) => 400 + 200 * i
+});
+
+/*
+var animRightCatItems = anime.timeline({
+  loop: false,
+  autoplay: false,
+});
+animRightCatItems
+  .add({
+    targets: '.categories-slider-container',
+    translateX: [100,0],
+    opacity: [0,1],
+    easing: "easeOutExpo",
+    duration: 1400,
+    delay: 500
+});*/
+
+
+var animLeftInfoCat = anime.timeline({
+  loop: false,
+  autoplay: false,
+});
+animLeftInfoCat
+  .add({
+    targets: '.categories-info-details-arrows',
+    translateX: [-100,0],
+    opacity: [0,1],
+    easing: "easeOutExpo",
+    duration: 1400,
+    delay: 500
+});
+
+var animLeftInfoLoc = anime.timeline({
+  loop: false,
+  autoplay: false,
+});
+animLeftInfoLoc
+  .add({
+    targets: '.locations-sec-container .event-info',
+    translateX: [-100,0],
+    opacity: [0,1],
+    easing: "easeOutExpo",
+    duration: 1400,
+    delay: 500
+});
+
+/*
+// issue here with big image loosing its place
+var animRightBlogPosts = anime.timeline({
+  loop: false,
+  autoplay: false,
+});
+animRightBlogPosts
+  .add({
+    targets: '.blog-posts-list-item',
+  // translateY: 0,
+  // delay: anime.stagger(100) // increase delay by 100ms for each elements.
+    translateY: [600,0],
+    opacity: [0,1],
+    easing: "easeOutExpo",
+    duration: 1400,
+    delay: (el, i) => 400 + 200 * i
+});
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Play your animation with these
 fadeUp.play();
 slideUp.play();
@@ -331,13 +423,51 @@ $( ".your-button-class" ).mouseenter(function() {
 		// Put the play below this line
 });
 
+
+
+
 // Play animation when scrolled into view
-$('.main-title-lg').on('inview', function(event, isInView) {
+$('.main-title-lg').one('inview', function(event, isInView) {
   if (isInView) {
       
     fadeUpOnlyOnScroll.play();
-    fadeUpOnlyOnScroll.restart();
 		// Put the play below this line
   } else {
+    fadeUpOnlyOnScroll.pause();
+  }
+});
+$('.best-sellers-list').on('inview', function(event, isInView) {
+  if (isInView) {
+    staggerIn.play();
+    // staggerIn.restart();
+    // console.log('in view');
+  } else {
+    $('.best-sellers-list').off('inview');
+    // console.log('not in view');
+  }
+});
+
+$('.closest-store-filter').on('inview', function(event, isInView) {
+  if (isInView) {
+    animLeftInfoLoc.play();
+  } else {
+    $('.closest-store-filter').off('inview');
+  }
+});
+
+$('.categories-container').on('inview', function(event, isInView) {
+  if (isInView) {
+    animLeftInfoCat.play();
+    // animRightCatItems.play();
+  } else {
+    $('.categories-container').off('inview');
+  }
+});
+
+$('.blog-posts-awareness .title-awareness').on('inview', function(event, isInView) {
+  if (isInView) {
+    animRightBlogPosts.play();
+  } else {
+    $('.blog-posts-awareness').off('inview');
   }
 });

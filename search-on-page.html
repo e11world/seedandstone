@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search within Page or DIV</title>
+</head>
+<style>
+    body {
+        margin: 20px auto;
+        max-width: 900px;
+    }
+
+    #faq-search {
+        /*background: url(https://uploads-ssl.webflow.com/604bf2ef08cd1b653a122272/604f9fb36f7691755f21d03e_ico-search.svg) no-repeat;
+    text-align: left;
+    background-position: 97% center;*/
+        padding: 8px 35px 8px 12px;
+        border: 1px solid #000;
+        border-radius: 6px;
+        width: 100%;
+    }
+
+    ::selection {
+        background: #ffb7b7;
+        /* WebKit/Blink Browsers */
+    }
+
+    ::-moz-selection {
+        background: #ffb7b7;
+        /* Gecko Browsers */
+    }
+
+    mark {
+        font-family: sans-serif;
+        color: #ededed;
+    }
+
+    .highlight {
+        background-color: red;
+    }
+</style>
+
+<body>
+    <form>
+        <input autofocus="" data-list=".items" id="faq-search" name="search" placeholder="Search FAQ" type="text">
+    </form>
+    <div class="items">
+        <h3 class="faq-question">What is the legal age needed to purchase cannabis in BC?</h3>
+        <p>You must be 19 years or older in order to purchase cannabis in the province of British Columbia.</p>
+        <h3 class="faq-question">Do I need to show any ID to purchase cannabis?</h3>
+        <p>Quidem voluptatem incidunt aliquid voluptates et ducimus est et. Ut repudiandae natus quis. Repudiandae eum
+            et debitis error dolores excepturi commodi ullam deleniti. Aspernatur consequatur aliquam eum porro
+            voluptatem nulla. Quos fugit accusamus excepturi et iusto deserunt quis et. Quod ut excepturi aliquid
+            pariatur quia ratione quibusdam ipsa suscipit.</p>
+        <h3 class="faq-question">Can I bring my underage child into Seed &amp; Stone?</h3>
+        <p>Fugiat est et. Porro facere sed illum nisi doloribus et inventore nihil cum. Magni dolorem molestiae. Cumque
+            ex eaque debitis molestiae porro. Qui nihil fugit neque accusamus in recusandae debitis autem. Sit aliquid
+            iure voluptates et.</p>
+        <h3 class="faq-question">Is a prescription required to buy cannabis?</h3>
+        <p>Vitae nostrum debitis architecto qui eveniet id. Porro ex aut dolore facilis. Dolorum non id. Iusto voluptas
+            quia et quidem molestiae dolor repudiandae corrupti est.</p>
+        <h3 class="faq-question">Am I able to buy cannabis online from Seed &amp; Stone?</h3>
+        <p>Quidem voluptatem incidunt aliquid voluptates et ducimus est et. Ut repudiandae natus quis. Repudiandae eum
+            et debitis error dolores excepturi commodi ullam deleniti. Aspernatur consequatur aliquam eum porro
+            voluptatem nulla.</p>
+        <h3 class="faq-question">Where does Seed &amp; Stone get their cannabis from?</h3>
+        <p>Perspiciatis asperiores et. Qui atque earum quo itaque temporibus labore optio. Hic totam non beatae facilis
+            earum est.</p>
+        <h3 class="faq-question">How much cannabis can I legally buy?</h3>
+        <p>Sunt est commodi et non sed. Deleniti sed sed quasi quasi eum. Accusantium et qui. Dolores aperiam tempore et
+            repellat et doloremque aspernatur.</p>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="jquery.hideseek.min.js"></script>
+<script>
+    // Run javascript after DOM is initialized
+    $(document).ready(function () {
+        $("#faq-search").hideseek({
+            list: ".items",
+            nodata: "",
+            attribute: "text",
+            matches: false,
+            highlight: true,
+            ignore: ".ignore-class",
+            navigation: false,
+            ignore_accents: false,
+            hidden_mode: false,
+            min_chars: 2
+        });
+    });
+
+</script>
+
+</html>

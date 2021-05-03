@@ -204,9 +204,17 @@
   width: 200%;
   height: 200%;
   transform: skew(-18deg) rotate(-54deg);
-  line-height: 1.9;
+  /* line-height: 1.9; */
   text-align: center;
   /*   box-shadow: inset 10px 10px 10px rgba(255,255,255,0.33); */
+  font-size: 1.4em;
+  font-weight: 700;
+  line-height: 4em;
+  color: #000;
+}
+.slice label {
+}
+.circle label {
 }
 .slice label span {
   display: block;
@@ -216,7 +224,6 @@
   /*   backdrop-filter: blur(10px); */
   /*   backdrop-filter: grayscale(0.5) opacity(0.8); */
   /*   filter: grayscale(100%); */
-  /*   color: white; */
   /*   border: 2px solid rgba(0,0,0,0.3); */
   box-shadow: inset 10px 10px 10px rgba(255, 255, 255, 0.33);
   transition: all 0.33s ease;
@@ -258,14 +265,6 @@
   background: #93d500;
 }
 
-.slice label {
-  font-weight: 700;
-  line-height: 5;
-}
-.circle label {
-  font-weight: 700;
-  line-height: 5;
-}
 .slice p {
   width: 100px;
   margin-left: 185px;
@@ -437,7 +436,78 @@
   top: -25px;
   left: -25px;
 }
+@media screen and (max-width: 1024px) {
+  .radial-menu-container {
+    top: -230px;
+  }
+  .mood-rotator-arrows {
+    right: 0px;
+    top: 40px;
+  }
+  .circle label {
+    line-height: 3;
+  }
+  .scrollbar {
+    max-width: 840px;
+    overflow-x: hidden;
+    height: 80vh;
+    top: 100px;
+  }
+  .mood-item-img {
+    max-height: 260px;
+    min-height: auto;
+  }
+  .mood-item-info {
+    min-width: 220px;
+    justify-content: space-between;
+  }
+  .mood-item {
+  }
+  .product-moods {
+    grid-column-gap: 36px;
+    grid-row-gap: 36px;
+  }
+  .mood-item-details {
+    align-items: center;
+  }
+  .mood-visible {
+    left: 50px;
+  }
+  .custom-scrollbar-container {
+    min-height: 94vh;
+  }
+}
 
+@media screen and (max-width: 800px) {
+  .mood-wheel {
+    right: -100px;
+    opacity: 0;
+  }
+  .radial-menu-container {
+    top: -30px;
+  }
+  .mood-rotator-arrows {
+    min-height: 160px;
+    right: -5px;
+    top: 0;
+  }
+  .mood-rotator-arrow img {
+    max-width: 90%;
+  }
+  .slice label {
+    font-size: 1.2em;
+  }
+  .mood-item {
+    padding: 26px;
+  }
+  .scrollbar {
+    /* height: 90vh; */
+  }
+  .product-moods {
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+  }
+}
 @media screen and (max-width: 768px) {
   .controls {
     justify-content: center;
@@ -481,8 +551,9 @@
     top: -180px;
   }
   .circle label {
-    font-weight: 400;
-    line-height: 2.5;
+    font-weight: 600;
+    line-height: 2.6;
+    font-size: 1.1em;
   }
 
   .scrollbar {
@@ -503,7 +574,17 @@
   }
   .mood-item {
     margin-right: 0px;
-    padding: 30px;
+    padding: 20px;
     margin-left: 40px;
+  }
+  .mood-visible {
+    left: 0px;
+  }
+  .mood-item-img {
+    margin-top: 20px;
+  }
+  .btn-clear.mood-item-link {
+    border: 1px solid rgba(255, 255, 255, 0.33);
+    text-align: center;
   }
 }
