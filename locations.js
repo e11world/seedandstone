@@ -6,42 +6,52 @@ const points = [
     class: "loc-1",
     title: "Chilliwack",
     desc:
-      "1 #103 - 8050 Lickman Road<br>Chilliwack, BC V2R 0Y3<br>Phone number: 604 - 392 - 7772",
+      "8050 Lickman Rd #103<br>Chilliwack, BC V2R 0Y3<br>604-392-7772",
   },
   {
     id: 1,
-    latitude: 49.0327183,
-    longitute: -122.8028631,
+    latitude: 49.035227,
+    longitute: -122.7846575,
     class: "loc-2",
     title: "White Rock",
     desc:
-      "2 #103 - 8050 Lickman Road<br>Chilliwack, BC V2R 0Y3<br>Phone number: 604 - 392 - 7772",
+      "1421 Johnston Road<br>White Rock, BC",
   },
   {
     id: 2,
-    latitude: 49.1946032,
-    longitute: -123.0662658,
+    latitude: 49.021343,
+    longitute: -122.805389,
     class: "loc-3",
-    title: "Location 3",
+    title: "White Rock",
     desc:
-      "3 #103 - 8050 Lickman Road<br>Chilliwack, BC V2R 0Y3<br>Phone number: 604 - 392 - 7772",
+      "15053 Marine Drive<br>White Rock, BC",
   },
   {
     id: 3,
-    latitude: 49.2458283,
-    longitute: -123.1175777,
+    latitude: 48.423631,
+    longitute: -123.367193,
     class: "loc-4",
-    title: "Location 4",
+    title: "Victoria",
     desc:
-      "4 #103 - 8050 Lickman Road<br>Chilliwack, BC V2R 0Y3<br>Phone number: 604 - 392 - 7772",
+      "616 Fort Street<br>Victoria, BC",
+  },
+  {
+    id: 4,
+    latitude: 48.424945,
+    longitute: -123.367363,
+    class: "loc-5",
+    title: "Victoria",
+    desc:
+      "901 Gordon Street<br>Victoria, BC",
   },
 ];
 
 const names = {
-  2: "Richmond",
-  3: "Van",
   0: "Chilliwack",
-  1: "Monark Whiterock",
+  1: "White Rock",
+  2: "White Rock",
+  3: "Victoria",
+  4: "Victoria",
 };
 
 var side_bar_html = "";
@@ -51,8 +61,8 @@ var gmarkers = [];
 var marker;
 // create the map
 var myOptions = {
-  center: new google.maps.LatLng(49.1609233, -122.6128458),
-  zoom: 10,
+  center: new google.maps.LatLng(48.933917, -122.630434),
+  zoom: 9,
   disableDefaultUI: true,
   mapTypeId: google.maps.MapTypeId.ROADMAP,
 };

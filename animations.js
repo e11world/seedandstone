@@ -463,11 +463,11 @@ $('.categories-container').on('inview', function(event, isInView) {
     $('.categories-container').off('inview');
   }
 });
-
+/*
 $('.blog-posts-awareness .title-awareness').on('inview', function(event, isInView) {
   if (isInView) {
     animRightBlogPosts.play();
   } else {
     $('.blog-posts-awareness').off('inview');
   }
-});
+});*/

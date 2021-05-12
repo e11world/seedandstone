@@ -76,7 +76,7 @@ $(document).ready(function () {
   if ($(window).width() > 800) {
       // theSlider();
       // $('#lightSlider .col-item').css('width', '100%');
-      console.log('not mobile');
+      // console.log('not mobile');
   } else {
       // initTeaserHeight();
       // $('#lightSlider').parent().parent().find('.lSAction, .lSPager').remove();
@@ -84,7 +84,7 @@ $(document).ready(function () {
       $('#lightSlider').parent().parent().find('.lSSlideOuter').remove();
       $('#lightSlider').children().removeAttr('style');
       slider.destroy();
-      console.log('mobile');
+      // console.log('mobile');
   }
 
   $(window).on('resize', function(e) {
