@@ -15,6 +15,43 @@ const points = [
     class: "loc-2",
     title: "White Rock",
     desc:
+      "Coming Soon",
+  },
+  {
+    id: 2,
+    latitude: 49.021343,
+    longitute: -122.805389,
+    class: "loc-3",
+    title: "White Rock",
+    desc:
+      "Coming Soon",
+  },
+  {
+    id: 3,
+    latitude: 48.423631,
+    longitute: -123.367193,
+    class: "loc-4",
+    title: "Victoria",
+    desc:
+      "Coming Soon",
+  },
+  {
+    id: 4,
+    latitude: 48.424945,
+    longitute: -123.367363,
+    class: "loc-5",
+    title: "Victoria",
+    desc:
+      "Coming Soon",
+  },
+  /*
+  {
+    id: 1,
+    latitude: 49.035227,
+    longitute: -122.7846575,
+    class: "loc-2",
+    title: "White Rock",
+    desc:
       "1421 Johnston Road<br>White Rock, BC",
   },
   {
@@ -43,7 +80,7 @@ const points = [
     title: "Victoria",
     desc:
       "901 Gordon Street<br>Victoria, BC",
-  },
+  },*/
 ];
 
 const names = {
