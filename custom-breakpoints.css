@@ -11,6 +11,23 @@
     max-width: 1360px;
     margin-left: 0;
   }
+  .container .container-sm { 
+    max-width: 850px;
+  }
+  .w-richtext figure, .w-richtext img {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .related-post-header {
+    min-height: 8em;
+  }
+  .related-post-summary {
+    min-height: 240px;
+  }
+  .team-member-pic {
+    width: 100%;
+    object-fit: cover;
+  }
 }
 @media screen and (max-width: 1440px) {
   .container.nav-bar-container,
