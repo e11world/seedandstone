@@ -537,7 +537,7 @@
   .scrollbar {
     height: calc(100vh - 180px);
     top: 80px;
-  left: -34px;
+    left: -34px;
   }
   .custom-scrollbar-container {
     min-height: 98vh;

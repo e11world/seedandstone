@@ -310,7 +310,7 @@ p {
   to {
     transition: all 1.5s;
     font-size: 30px;
-    top: 300px;
+    top: 250px;
     transform: rotate(45deg);
   }
 }
@@ -384,6 +384,11 @@ p {
 }
 
 @media only screen and (max-width: 800px) {
+  
+.category-title-icon,
+.category-item > a {
+  justify-content: space-evenly;
+}
   /* .categories-container {
    max-width: 1600px; 
   flex: 1;
