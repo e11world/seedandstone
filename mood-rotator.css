@@ -1,6 +1,16 @@
 .custom-scrollbar-arrow-top,
 .radial-menu-arrow-top,
 .circle-arrow-top,
+.clean-arrow-top,
+.custom-scrollbar-arrow-bottom,
+.radial-menu-arrow-bottom,
+.circle-arrow-bottom,
+.clean-arrow-bottom {
+  cursor: pointer;
+}
+.custom-scrollbar-arrow-top,
+.radial-menu-arrow-top,
+.circle-arrow-top,
 .clean-arrow-top {
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
@@ -121,6 +131,9 @@
 .mood-rotator-arrows {
   right: -80px;
   top: 150px;
+  /* left: 30%;
+  top: 50%;
+  transform: translate(-50%, -50%); */
   position: absolute;
   z-index: 3;
   display: flex;
@@ -151,6 +164,7 @@
   width: 50%;
   max-width: 50em;
   top: -116px;
+  pointer-events: none;
 }
 .menunav ul {
   position: relative;
@@ -160,6 +174,7 @@
   list-style: none;
   margin-bottom: 0;
   overflow: hidden;
+  pointer-events: auto;
 }
 .menunav li {
   position: absolute;
@@ -436,12 +451,18 @@
   top: -25px;
   left: -25px;
 }
+@media screen and (max-width: 1504px) {
+  .mood-rotator-arrows {
+    right: -20px;
+    top: 130px;
+  }
+}
 @media screen and (max-width: 1024px) {
   .radial-menu-container {
     top: -230px;
   }
   .mood-rotator-arrows {
-    right: 0px;
+    right: -10px;
     top: 40px;
   }
   .circle label {
@@ -521,7 +542,8 @@
   }
 
   .mood-rotator-arrows {
-    right: 10px;
+    right: 40px;
+    top: 130px;
   }
   .menunav {
     right: -53%;
@@ -561,7 +583,7 @@
   }
 
   .menunav {
-    right: -66%;
+    right: -56%;
     width: 100%;
     top: -180px;
   }
@@ -615,7 +637,7 @@
 
 @media screen and (max-width: 414px) {
   .mood-rotator-arrows {
-    right: 10px;
+    right: 20px;
     top: -30px;
   }
   /* .custom-scrollbar-container {
@@ -624,7 +646,7 @@
 }
 @media screen and (max-width: 375px) {
   .mood-rotator-arrows {
-    right: 10px;
+    right: 20px;
     top: -50px;
   }
   /* .custom-scrollbar-container {
@@ -633,7 +655,7 @@
 }
 @media screen and (max-width: 320px) {
   .mood-rotator-arrows {
-        right: 6px;
+    right: 6px;
     top: -80px;
   }
   /* .custom-scrollbar-container {
