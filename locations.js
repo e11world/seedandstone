@@ -291,3 +291,12 @@ function createMarker(latlng, name, html) {
 }
 
 google.maps.event.addListenerOnce(map, "idle", initialize);
+
+
+$('#directions-form .directions-input').keydown(function (e) {
+    if (e.keyCode == 13) {
+        // e.preventDefault();
+        return false;
+        // console.log('working');
+    }
+});

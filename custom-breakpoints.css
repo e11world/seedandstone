@@ -24,6 +24,27 @@ body::-webkit-scrollbar-thumb {
   border-color: #ff7f30 !important;
   color: #ff7f30 !important;
 }
+
+.category-arrows img,
+.category-arrows img,
+.custom-scrollbar-container img,
+.custom-scrollbar-container img,
+#customize-controls .prev img,
+#customize-controls .next img {
+  max-width: 60px;
+  transition: all 0.33s ease;
+}
+#customize-controls .prev img:hover,
+#customize-controls .next img:hover,
+.category-arrows img:hover,
+.category-arrows img:hover,
+.custom-scrollbar-arrows-container img:hover,
+.custom-scrollbar-arrows-container img:hover,
+.custom-scrollbar-container img:hover,
+.custom-scrollbar-container img:hover {
+  opacity: 0.5;
+}
+
 @media screen and (max-width: 1680px) {
   .container.nav-bar-container,
   .container,
@@ -413,7 +434,9 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     flex-direction: column;
   } */
-
+  .controls li {
+    margin: 20px;
+  }
   .category-item {
     max-width: 100%;
   }
@@ -431,6 +454,11 @@ body::-webkit-scrollbar-thumb {
   .contact-us-location-title {
     font-size: 28px;
     line-height: 34px;
+  }
+  #v0 {
+    top: calc(50vh - 200px);
+    width: 100%;
+    max-width: 100%;
   }
 }
 @media screen and (max-width: 515px) {
@@ -454,9 +482,80 @@ body::-webkit-scrollbar-thumb {
   .featured-sec-title {
     font-size: 40px;
   }
+  .container.sec-hp-hero {
+    min-height: 83vh;
+    flex-direction: row;
+    align-items: flex-end;
+    padding-bottom: 30px;
+  }
+  .hero-title {
+    flex: auto;
+  }
+  .heading-2.large-heading {
+    line-height: 1;
+  }
+
+  .categories-slider {
+    height: auto !important;
+  }
+
+  .category-item {
+    max-width: 100%;
+    padding: 20px;
+  }
+  .category-icon {
+    height: 100%;
+    min-height: 20px;
+    max-height: 40px;
+  }
+
+  .title-bold {
+    font-size: 34px;
+    line-height: 42px;
+  }
+  .title-secondary {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .footer-flex-container {
+    margin-bottom: 0;
+  }
+  .rotating-text-circle {
+    width: 100%;
+  }
+  .footer-rotating-logo {
+    margin-top: 0;
+  }
+  .footer-copyrights {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .circular-text .parent {
+    text-align: center;
+  }
+  #footer .footer-container {
+    margin-bottom: 0;
+  }
+  #footer .footer-container + .container {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  body.about-pg {
+    overflow-x: hidden;
+  }
+  #v0 {
+    position: fixed;
+    top: calc(50vh - 100px);
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+  }
 }
 /*
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 320px) and (max-width: 515px) {
+
 }
 
 @media screen and (min-width: 1024px) {
