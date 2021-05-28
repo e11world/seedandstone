@@ -388,7 +388,8 @@ p {
 @media only screen and (max-width: 800px) {
   .category-title-icon,
   .category-item > a {
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
+    justify-content: flex-end;
   }
   /* .categories-container {
    max-width: 1600px; 
