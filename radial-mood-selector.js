@@ -60,10 +60,10 @@ $(document).ready(function() {
     let selectedID = Number($(this).attr("id"));
     if (targetTop === -100 || targetTop > -150 && targetTop < -20) {
 
-     	console.log(targetTop);
+     	// console.log(targetTop);
     } else if (targetTop === 74 || targetTop > 20 && targetTop < 120) {
-		console.log(targetTop);
-      console.log(targetTop);
+		// console.log(targetTop);
+      // console.log(targetTop);
       tmpAnimation = tmpAnimation - 72;
       $("ul.circle").animate({
         degrees: tmpAnimation
@@ -87,9 +87,9 @@ $(document).ready(function() {
             });
           }
         });
-    	console.log(targetTop, 'this is it for mobile');
+    	// console.log(targetTop, 'this is it for mobile');
     } else {
-    console.log(targetTop);
+    // console.log(targetTop);
       tmpAnimation = tmpAnimation + 72;
       $("ul.circle").animate({
         degrees: tmpAnimation
@@ -108,7 +108,7 @@ $(document).ready(function() {
   $(".forwards").click(function(e) {
     e.preventDefault();
 
-    $target = $(event.target);
+    $target = $(e.target);
     let targetPos = $target.position();
     // let parentPos = $(".circle").offset();
 
@@ -131,7 +131,7 @@ $(document).ready(function() {
         }
       });
     } else {
-    console.log(targetTop);
+    // console.log(targetTop);
       tmpAnimation = tmpAnimation + 72;
       $("ul.circle").animate({
         degrees: tmpAnimation
@@ -149,17 +149,17 @@ $(document).ready(function() {
   $(".backwards").click(function(e) {
     e.preventDefault();
 
-    $target = $(event.target);
+    $target = $(e.target);
     let targetPos = $target.position();
     // let parentPos = $(".circle").offset();
 
     let targetTop = Math.round(targetPos.top);
     // let selectedID = Number($(this).attr("id"));
     if (targetTop === -100 || targetTop > -150 && targetTop < -20) {
-    console.log(targetTop);
+    // console.log(targetTop);
     //} else if (targetTop === 74 || targetTop > 50 && targetTop < 120) {
     } else if (targetTop === 74 || targetTop < 11 && targetTop > 150) {
-    console.log(targetTop);
+    // console.log(targetTop);
       tmpAnimation = tmpAnimation + 72;
       $("ul.circle").animate({
         degrees: tmpAnimation
@@ -172,7 +172,7 @@ $(document).ready(function() {
         }
       });
     } else {
-    console.log(targetTop);
+    // console.log(targetTop);
       tmpAnimation = tmpAnimation - 72;
       $("ul.circle").animate({
         degrees: tmpAnimation

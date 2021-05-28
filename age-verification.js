@@ -17,7 +17,8 @@ av_legality_check = function() {
 		// legal!
 		// Do nothing?
 		hide_animated_bg();
-		$('body').css({'overflow-y':'initial', 'position': 'initial', 'height' : 'initial'});
+		$('body').css({'overflow-y':'initial', 'position': 'static', 'height' : 'initial'});
+		$('.vanta-canvas').css({'display' : 'none'});
 	} else {
 		av_showmodal();
 		$('body').css({'overflow-y':'auto', 'position': 'fixed', 'height' : '100vh', 'opacity' : '1'});

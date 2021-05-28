@@ -30,21 +30,98 @@ body::-webkit-scrollbar-thumb {
 .custom-scrollbar-container img,
 .custom-scrollbar-container img,
 #customize-controls .prev img,
-#customize-controls .next img {
+#customize-controls .next img,
+.mood-rotator-arrows .forwards img,
+.mood-rotator-arrows .backwards img {
   max-width: 60px;
   transition: all 0.33s ease;
 }
-#customize-controls .prev img:hover,
-#customize-controls .next img:hover,
-.category-arrows img:hover,
-.category-arrows img:hover,
-.custom-scrollbar-arrows-container img:hover,
-.custom-scrollbar-arrows-container img:hover,
-.custom-scrollbar-container img:hover,
-.custom-scrollbar-container img:hover {
+.custom-scrollbar-arrows-container img,
+.custom-scrollbar-arrows-container img {
+  transition: all 0.33s ease;
+}
+#customize-controls .prev img:active,
+#customize-controls .next img:active,
+.category-arrows img:active,
+.category-arrows img:active,
+.custom-scrollbar-arrows-container img:active,
+.custom-scrollbar-arrows-container img:active,
+.custom-scrollbar-container img:active,
+.custom-scrollbar-container img:active,
+.mood-rotator-arrows .forwards img:active,
+.mood-rotator-arrows .backwards img:active {
   opacity: 0.5;
 }
-
+@media screen and (min-width: 800px) {
+  #customize-controls .prev img:hover,
+  #customize-controls .next img:hover,
+  .category-arrows img:hover,
+  .category-arrows img:hover,
+  .custom-scrollbar-arrows-container img:hover,
+  .custom-scrollbar-arrows-container img:hover,
+  .custom-scrollbar-container img:hover,
+  .custom-scrollbar-container img:hover,
+  .mood-rotator-arrows .forwards img:hover,
+  .mood-rotator-arrows .backwards img:hover {
+    opacity: 0.5;
+  }
+}
+.caryophyllene {
+  transition: all 0.33s ease;
+}
+.myrcene {
+  transition: all 0.33s ease;
+}
+.camphene {
+  transition: all 0.33s ease;
+}
+.limonene {
+  transition: all 0.33s ease;
+}
+.eucalyptol {
+  transition: all 0.33s ease;
+}
+.humulene {
+  transition: all 0.33s ease;
+}
+.alpha-pinene {
+  transition: all 0.33s ease;
+}
+.terpinolene {
+  transition: all 0.33s ease;
+}
+.linalool {
+  transition: all 0.33s ease;
+}
+/*
+.caryophyllene:hover {
+  color: #96460a;
+}
+.myrcene:hover {
+  color: #fa502d;
+}
+.camphene:hover {
+  color: #ff7f30;
+}
+.limonene:hover {
+  color: #ffda00;
+}
+.eucalyptol:hover {
+  color: #93d500;
+}
+.humulene:hover {
+  color: #348f41;
+}
+.alpha-pinene:hover {
+  color: #2a7de1;
+}
+.terpinolene:hover {
+  color: #b11cab;
+}
+.linalool:hover {
+  color: #f45197;
+}
+*/
 @media screen and (max-width: 1680px) {
   .container.nav-bar-container,
   .container,
@@ -88,6 +165,12 @@ body::-webkit-scrollbar-thumb {
   }
   .category-item {
     max-width: 165px;
+  }
+  .categories-container {
+    margin-left: 100px;
+  }
+  .event-info {
+    margin-left: 0;
   }
 }
 @media screen and (max-width: 1440px) {
@@ -483,10 +566,13 @@ body::-webkit-scrollbar-thumb {
     font-size: 40px;
   }
   .container.sec-hp-hero {
-    min-height: 83vh;
+    /* min-height: 83vh; */
     flex-direction: row;
     align-items: flex-end;
     padding-bottom: 30px;
+    min-height: 60vh;
+    height: calc(100vh - 150px);
+    margin: 0;
   }
   .hero-title {
     flex: auto;
@@ -551,6 +637,16 @@ body::-webkit-scrollbar-thumb {
     left: 0;
     width: 100%;
     max-width: 100%;
+  }
+  .social-links-hp-hero {
+    flex-direction: column;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .social-media-link.hero-social-media-link.center-social-media-link {
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 20px;
   }
 }
 /*
