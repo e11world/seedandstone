@@ -75,7 +75,8 @@ av_setCookie = function(e) {
 	if (is_legal_age == "yes") {
 		av_closeModal();
 		// $(window).off('resize');
-		$('body').css({'overflow-y':'initial', 'position': 'initial', 'height' : 'initial'});
+		$('body').css({'overflow-y':'initial', 'position': 'static', 'height' : 'initial'});
+		// $('body').css({'overflow-y':'initial', 'position': 'initial', 'height' : 'initial'});
 	} else {
 		av_showRegret();
 	}

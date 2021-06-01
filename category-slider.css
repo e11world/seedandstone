@@ -434,6 +434,7 @@ p {
     writing-mode: initial;
     transform: initial;
     border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: background-color 0.33s ease;
   }
   .category-title-icon {
     max-width: 100%;
@@ -500,6 +501,16 @@ p {
   .products-categories.mt-mb-80 {
     margin-top: 0;
     margin-bottom: 0;
+  }
+  
+  .category-item:active {
+    background: #FF7F30;
+  }
+  .category-item:active a {
+    opacity: 1;
+  }
+  .category-item:active a img {
+  
   }
 }
 @media only screen and (max-width: 420px) {

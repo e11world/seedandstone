@@ -43,6 +43,14 @@ $(document).ready(function () {
       swipeThreshold: 40,
 
       responsive: [
+        // {
+        //   breakpoint: 1504,
+        //   settings: {
+        //     item: 4,
+        //     slideMove: 1,
+        //     // slideMargin: 0,
+        //   }
+        // },
         {
           breakpoint: 800,
           settings: {

@@ -3,10 +3,11 @@
 var slider = tns({
   container: '.best-sellers-list',
   items: 4,
-  loop: true,
+  loop: false,
+  // rewind: true,
   edgePadding: 0,
   mouseDrag: true,
-  arrowKeys: true,
+  // arrowKeys: true,
   "slideBy": 1,
   "swipeAngle": false,
   autoplayButtonOutput: false,

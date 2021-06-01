@@ -451,13 +451,89 @@
   top: -25px;
   left: -25px;
 }
+
+
+.arrow-selection-indicator {
+  height: 760px;
+  width: 760px;
+  right: -550px;
+  top: -146px;
+  position: absolute;
+  pointer-events: none;
+  background: rgb(4, 4, 4, 0.83);
+  border-radius: 50%;
+}
+
+.circle-thin-border {
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 50%;
+  min-height: 70px;
+  min-width: 70px;
+  position: relative;
+  box-shadow: 0 0 0 1px #cfd1d1;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.arrow-indicator {
+  width: 0px;
+  height: 0px;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid white;
+  position: relative;
+  left: -1px;
+}
+
+
+
+@media screen and (max-width: 1680px) {
+  .arrow-selection-indicator {
+    right: -486px;
+  }
+}
+
+
+
 @media screen and (max-width: 1504px) {
   .mood-rotator-arrows {
     right: -20px;
     top: 130px;
   }
+  .arrow-selection-indicator {
+    right: -486px;
+    top: -170px;
+  }
 }
+
+
+@media screen and (max-width: 1440px) {
+  .arrow-selection-indicator {
+    right: -456px;
+    top: -145px;
+    height: 710px;
+    width: 710px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .arrow-selection-indicator {
+    right: -406px;
+    top: -160px;
+    height: 640px;
+    width: 640px;
+  }
+}
+
 @media screen and (max-width: 1024px) {
+  .arrow-selection-indicator {
+    right: -350px;
+    top: -150px;
+    height: 560px;
+    width: 560px;
+  }
   .radial-menu-container {
     top: -230px;
   }
@@ -537,6 +613,23 @@
   }
 }
 @media screen and (max-width: 768px) {
+  
+  .arrow-selection-indicator {
+    height: 760px;
+    width: 760px;
+    right: -450px;
+    top: -160px;
+  }
+  .circle-thin-border {
+    border: 1px solid white;
+  }
+  .arrow-indicator {
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+    border-left: 11px solid white;
+    left: 0;
+  }
+
   .controls {
     justify-content: center;
     margin-top: 20px;
@@ -576,6 +669,20 @@
 }
 
 @media screen and (max-width: 420px) {
+    
+  .arrow-selection-indicator {
+    height: 460px;
+    width: 460px;
+    right: -252px;
+    top: -202px;
+  }
+
+  .arrow-indicator {
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid white;
+  }
+
   .mood-rotator-arrows {
     right: 0px;
     top: -70px;
@@ -649,6 +756,14 @@
   } */
 }
 @media screen and (max-width: 375px) {
+  
+  .arrow-selection-indicator {
+    height: 430px;
+    width: 430px;
+    right: -234px;
+    top: -206px;
+  }
+
   .mood-rotator-arrows {
     right: 20px;
     top: -50px;
@@ -658,8 +773,14 @@
   } */
 }
 @media screen and (max-width: 320px) {
+  .arrow-selection-indicator {
+    height: 360px;
+    width: 360px;
+    right: -200px;
+    top: -200px;
+  }
   .mood-rotator-arrows {
-    right: 6px;
+    right: 24px;
     top: -80px;
   }
   /* .custom-scrollbar-container {
