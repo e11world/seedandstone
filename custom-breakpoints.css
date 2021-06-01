@@ -2,6 +2,32 @@
 /* .blog-post-main-img-overlay {
       pointer-events: none;
 } */
+:root {
+  --link-color: #dedede;
+  --hover-color: #ff7f30;
+}
+
+a[href^="mailto:"],
+a[href^="mailto:"]:link {
+  color: var(--link-color);
+}
+a[href^="mailto:"]:active {
+  color: var(--hover-color);
+}
+a:visited {
+  color: var(--link-color) !important;
+}
+a:hover {
+  color: var(--hover-color);
+}
+a:active {
+  color: var(--hover-color);
+}
+a[href^="tel"] {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
 body::-webkit-scrollbar {
   width: 1.3em;
   background-color: #000;
@@ -66,7 +92,6 @@ body::-webkit-scrollbar-thumb {
   .mood-rotator-arrows .backwards img:hover {
     opacity: 0.5;
   }
-    
 }
 .caryophyllene {
   transition: all 0.33s ease;
@@ -127,20 +152,19 @@ body::-webkit-scrollbar-thumb {
 }
 */
 
-
 .event-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 60px;
 }
 .categories-info-details-arrows {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .btn-bordered.btn-shop {
-    align-self: flex-start;
+  align-self: flex-start;
 }
 
 @media screen and (max-width: 1680px) {
@@ -158,10 +182,9 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
-
 /* @media screen and (min-width: 1500px) and (max-width: 1504px) {
 } */
-  
+
 @media screen and (max-width: 1504px) {
   .container.nav-bar-container,
   .container,
@@ -538,9 +561,14 @@ body::-webkit-scrollbar-thumb {
   }
 }
 @media screen and (max-width: 800px) {
-  
+  .featured-sec-title {
+    margin-top: 0px;
+  }
   .post-featured-details-desc {
     min-height: auto;
+  }
+  .icons-group .p-20 {
+    padding: 10px 20px;
   }
   .categories-container {
     margin-left: 0;
@@ -604,7 +632,7 @@ body::-webkit-scrollbar-thumb {
   .event-info {
     padding-bottom: 0;
   }
-  
+
   .mood-rotator-arrows .forwards img,
   .mood-rotator-arrows .backwards img {
     max-width: 50px;
@@ -696,9 +724,9 @@ body::-webkit-scrollbar-thumb {
     margin-bottom: 0;
   }
 
-    body.about-pg {
-      /* overflow-x: hidden; */
-    }
+  body.about-pg {
+    /* overflow-x: hidden; */
+  }
   #v0 {
     position: fixed;
     top: calc(50vh - 100px);
