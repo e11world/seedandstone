@@ -76,9 +76,76 @@
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
+  /* CSS specific to iOS devices */ 
+
+/*
+@supports (-webkit-touch-callout: none) {
+    @media screen and (min-width: 1910px) and (-webkit-min-device-pixel-ratio: 0) {
+       
+    }
+        .container, .container.nav-bar-container {
+          max-width: 1600px !important;
+        }
+}
+@media not all and (min-resolution:.001dpcm) { 
+  @media (min-width: 1920px) {
+    
+        .container, .container.nav-bar-container {
+          max-width: 1600px !important;
+        }
+  }
+}*/
+
+/* @media screen and (min-width: 1920px) {
+  @media not all and (min-resolution: 0.001dpcm) {
+    .container, .container.nav-bar-container {
+      max-width: 1600px !important;
+    }
+  }
+} */
+
+/* first one being overridden somehow */
 
 @media not all and (min-resolution: 0.001dpcm) {
+  
+  
   @supports (-webkit-appearance: none) {
+    
+    @supports (-webkit-touch-callout: none) {
+      
+    }
+    @media screen and (max-width: 520px) {
+      .scrollbar {
+        overflow: scroll;
+        overflow-x: hidden;
+      overflow-y: scroll;
+        /* min-height: 70vh;
+        height: 70vh; */
+        -webkit-overflow-scrolling: touch;
+        overflow: scroll !important;
+        overflow: -moz-scrollbars-vertical;
+        direction: ltr;
+        left: 30px;
+        /* margin-right: -20px; */
+        margin-right: 0;
+      padding-right: 20px;
+      }
+      .mood-results {
+        flex-direction: row-reverse;
+      }
+      .mood-item {
+          margin-right: 40px;
+          margin-left: 0px;
+      }
+      .disclaimer-notice {
+          margin-left: 0px;
+          padding-right: 20px;
+      }
+      .custom-scrollbar-container {
+          right: 10px;
+          max-width: 50px;
+      }
+    }
     /*.scrollbar,
     .custom-scrollbar {
       -webkit-overflow-scrolling: touch;

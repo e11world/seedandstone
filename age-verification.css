@@ -1,6 +1,22 @@
 /*
  * Age verification CSS (MOBILE FIRST) to go with the JS that can be found at (https://github.com/Herudea/age-verification)
  */
+ 
+:root {
+  --link-color: #ffdec9;
+  --hover-color: #ff7f30;
+}
+.cookiez a, .cookiez a:link {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: all 0.33s ease;
+}
+.cookiez a:hover {
+  color: var(--hover-color);
+}
+.cookiez a:active {
+  color: var(--hover-color);
+}
 .vanta-canvas {
   width: 100% !important;
   height: 100% !important;
@@ -140,6 +156,10 @@
   max-width: 83%;
   text-align: center;
   margin: 0 auto;
+  font-size: 14px;
+}
+#modal_content p:last-child {
+  max-width: 60%;
 }
 #modal_content nav small {
   display: block;

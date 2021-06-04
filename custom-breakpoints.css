@@ -788,11 +788,167 @@ body::-webkit-scrollbar-thumb {
      }
 }*/
 /* _::-webkit-full-page-media, _:future, :root .safari_only { */
+
 @media not all and (min-resolution: 0.001dpcm) {
   @supports (-webkit-appearance: none) {
-    .footer-text {
+    /* .footer-text {
       color: #0000ff;
       background-color: #cccccc;
     }
+    .scrollbar {
+      overflow: scroll;
+      overflow-x: hidden;
+      min-height: 70vh;
+      height: 70vh;
+    } */
+  }
+}
+
+/* @media not all and (min-resolution: 0.001dpcm) and (min-width: 1024px) and (max-width: 1280px) {
+  .container.nav-bar-container, .container, .hp-featured-posts-bg-container, .featured-blog-posts-header {
+    max-width: 1100px;
+  }
+}*/
+
+
+@media not all and (min-resolution: 0.001dpcm) {
+  .apple-fix-font-italic {
+    padding-right: 20px;
+    margin-left: -20px;
+  }
+    
+  @media screen and (max-width: 1920px) {
+    /* body {
+      background: red !important;
+    } */
+    .container.nav-bar-container, .container, .hp-featured-posts-bg-container, .featured-blog-posts-header {
+      max-width: 1600px;
+    }
+  }  
+  @media screen and (max-width: 1600px)  {
+    .container.nav-bar-container, .container, .hp-featured-posts-bg-container, .featured-blog-posts-header {
+      max-width: 1400px;
+    }
+  }
+  @media screen and (max-width: 1440px) {
+    /* body {
+      background: blue !important;
+    } */
+      .container.nav-bar-container, .container, .hp-featured-posts-bg-container, .featured-blog-posts-header {
+        max-width: 1300px;
+      } 
+  }
+  @media screen and (max-width: 1280px)  {
+    .container.nav-bar-container, .container, .hp-featured-posts-bg-container, .featured-blog-posts-header {
+      max-width: 1100px;
+    }
+  }
+
+}
+
+
+/*
+@media not all and (min-resolution: 0.001dpcm) and (max-width: 1920px)  {
+  .container.nav-bar-container, .container, .hp-featured-posts-bg-container, .featured-blog-posts-header {
+    max-width: 1600px;
+  }
+}
+@media not all and (min-resolution: 0.001dpcm) and (max-width: 1600px)  {
+  .container.nav-bar-container, .container, .hp-featured-posts-bg-container, .featured-blog-posts-header {
+    max-width: 1400px;
+  }
+} 
+@media not all and (min-resolution: 0.001dpcm) and (max-width: 1440px)  {
+  .container.nav-bar-container, .container, .hp-featured-posts-bg-container, .featured-blog-posts-header {
+    max-width: 1300px;
+  }
+}
+*/
+@media not all and (min-resolution: 0.001dpcm) {
+  
+  
+  @supports (-webkit-appearance: none) {
+    
+    @supports (-webkit-touch-callout: none) {
+      
+    }
+    @media screen and (max-width: 520px) {
+      .scrollbar {
+        overflow: scroll;
+        overflow-x: hidden;
+      overflow-y: scroll;
+        /* min-height: 70vh;
+        height: 70vh; */
+        -webkit-overflow-scrolling: touch;
+        overflow: scroll !important;
+        overflow: -moz-scrollbars-vertical;
+        direction: ltr;
+        left: 30px;
+        /* margin-right: -20px; */
+        margin-right: 0;
+      padding-right: 20px;
+      }
+      .mood-results {
+        flex-direction: row-reverse;
+      }
+      .mood-item {
+          margin-right: 40px;
+          margin-left: 0px;
+      }
+      .disclaimer-notice {
+          margin-left: 0px;
+          padding-right: 20px;
+      }
+      .custom-scrollbar-container {
+          right: 10px;
+          max-width: 50px;
+      }
+    }
+    /*.scrollbar,
+    .custom-scrollbar {
+      -webkit-overflow-scrolling: touch;
+    }
+    .scrollbar::-webkit-scrollbar,
+    .custom-scrollbar::-webkit-scrollbar {
+      display: inherit;
+      overflow: scroll;
+      -webkit-overflow-scrolling: touch;
+    }
+    .scrollbar::-webkit-scrollbar,
+    .custom-scrollbar::-webkit-scrollbar {
+      -webkit-appearance: none;
+    }
+
+    .scrollbar::-webkit-scrollbar:vertical,
+    .custom-scrollbar::-webkit-scrollbar:vertical {
+      width: 11px;
+    }
+
+    .scrollbar::-webkit-scrollbar:horizontal,
+    .custom-scrollbar::-webkit-scrollbar:horizontal {
+      height: 11px;
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb,
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      border-radius: 8px;
+      border: 2px solid white;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .scrollbar::-webkit-scrollbar-track,
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background-color: #fff;
+      border-radius: 8px;
+    }
+    html {
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: scroll;
+    }
+    body {
+      overflow: scroll !important;
+    }
+    */
+    /* ::-webkit-scrollbar-thumb should match background, can't be transparent */
   }
 }
