@@ -15,17 +15,17 @@ const points = [
     class: "loc-2",
     title: "White Rock",
     desc:
-      "Coming Soon",
+      "Marine Drive, Whiterock<br>Coming Soon",
   },
-  {
-    id: 2,
-    latitude: 49.021343,
-    longitute: -122.805389,
-    class: "loc-3",
-    title: "White Rock",
-    desc:
-      "Coming Soon",
-  },
+  // {
+  //   id: 2,
+  //   latitude: 49.021343,
+  //   longitute: -122.805389,
+  //   class: "loc-3",
+  //   title: "White Rock",
+  //   desc:
+  //     "Coming Soon",
+  // },
   {
     id: 3,
     latitude: 48.423631,
@@ -33,7 +33,7 @@ const points = [
     class: "loc-4",
     title: "Victoria",
     desc:
-      "Coming Soon",
+      "Gordon Street, Victoria<br>Coming Soon",
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const points = [
     class: "loc-5",
     title: "Victoria",
     desc:
-      "Coming Soon",
+      "Fort Street, Victoria<br>Coming Soon",
   },
   /*
   {
@@ -86,7 +86,7 @@ const points = [
 const names = {
   0: "Chilliwack",
   1: "White Rock",
-  2: "White Rock",
+  // 2: "White Rock",
   3: "Victoria",
   4: "Victoria",
 };

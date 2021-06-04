@@ -77,6 +77,65 @@
   transform: rotate(90deg);
 }
 
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    /*.scrollbar,
+    .custom-scrollbar {
+      -webkit-overflow-scrolling: touch;
+    }
+    .scrollbar::-webkit-scrollbar,
+    .custom-scrollbar::-webkit-scrollbar {
+      display: inherit;
+      overflow: scroll;
+      -webkit-overflow-scrolling: touch;
+    }
+    .scrollbar::-webkit-scrollbar,
+    .custom-scrollbar::-webkit-scrollbar {
+      -webkit-appearance: none;
+    }
+
+    .scrollbar::-webkit-scrollbar:vertical,
+    .custom-scrollbar::-webkit-scrollbar:vertical {
+      width: 11px;
+    }
+
+    .scrollbar::-webkit-scrollbar:horizontal,
+    .custom-scrollbar::-webkit-scrollbar:horizontal {
+      height: 11px;
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb,
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      border-radius: 8px;
+      border: 2px solid white;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .scrollbar::-webkit-scrollbar-track,
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background-color: #fff;
+      border-radius: 8px;
+    }
+    html {
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: scroll;
+    }
+    body {
+      overflow: scroll !important;
+    }
+    */
+    /* ::-webkit-scrollbar-thumb should match background, can't be transparent */
+  }
+}
+/*
+@supports (-webkit-touch-callout: none) {
+  .scrollbar {
+    white-space: nowrap;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+*/
 /*
 .custom-scrollbar-container {
     top: 10px;
@@ -452,7 +511,6 @@
   left: -25px;
 }
 
-
 .arrow-selection-indicator {
   height: 760px;
   width: 760px;
@@ -488,15 +546,11 @@
   left: -1px;
 }
 
-
-
 @media screen and (max-width: 1680px) {
   .arrow-selection-indicator {
     right: -486px;
   }
 }
-
-
 
 @media screen and (max-width: 1504px) {
   .mood-rotator-arrows {
@@ -508,7 +562,6 @@
     top: -170px;
   }
 }
-
 
 @media screen and (max-width: 1440px) {
   .arrow-selection-indicator {
@@ -613,7 +666,6 @@
   }
 }
 @media screen and (max-width: 768px) {
-  
   .arrow-selection-indicator {
     height: 760px;
     width: 760px;
@@ -643,7 +695,7 @@
     top: 130px;
   }
   .menunav {
-    right: -53%;
+    right: -83%;
     width: 90%;
   }
   .mood-wheel {
@@ -669,7 +721,6 @@
 }
 
 @media screen and (max-width: 420px) {
-    
   .arrow-selection-indicator {
     height: 460px;
     width: 460px;
@@ -756,7 +807,6 @@
   } */
 }
 @media screen and (max-width: 375px) {
-  
   .arrow-selection-indicator {
     height: 430px;
     width: 430px;

@@ -3,17 +3,20 @@
       pointer-events: none;
 } */
 :root {
-  --link-color: #dedede;
+  --link-color: #ffdec9;
   --hover-color: #ff7f30;
 }
-
 a[href^="mailto:"],
 a[href^="mailto:"]:link {
   color: var(--link-color);
 }
+a[href^="mailto:"]:hover {
+  color: var(--hover-color);
+}
 a[href^="mailto:"]:active {
   color: var(--hover-color);
 }
+/*
 a:visited {
   color: var(--link-color) !important;
 }
@@ -23,6 +26,7 @@ a:hover {
 a:active {
   color: var(--hover-color);
 }
+*/
 a[href^="tel"] {
   color: var(--link-color);
   text-decoration: none;
@@ -165,6 +169,15 @@ body::-webkit-scrollbar-thumb {
 }
 .btn-bordered.btn-shop {
   align-self: flex-start;
+}
+
+.rich-text-content a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+.rich-text-content a:hover {
+  color: var(--hover-color);
+  transition: all 0.33s ease;
 }
 
 @media screen and (max-width: 1680px) {
@@ -626,6 +639,20 @@ body::-webkit-scrollbar-thumb {
   }
 }
 @media screen and (max-width: 515px) {
+  .w-nav-overlay {
+    /* position: static; */
+    top: 0;
+  }
+  .nav-menu {
+    height: 100vh;
+  }
+  .disclaimer-details-text,
+  .read-more-link-disclaimer {
+    display: inline;
+  }
+  .disclaimer-notice {
+    margin-left: 40px;
+  }
   .products-mood {
     margin-bottom: 0;
   }
@@ -753,3 +780,19 @@ body::-webkit-scrollbar-thumb {
 @media screen and (min-width: 1024px) {
 }
 */
+
+/*
+@media not all and (min-resolution:.001dpcm) { 
+     @supports (-webkit-appearance:none) {
+          
+     }
+}*/
+/* _::-webkit-full-page-media, _:future, :root .safari_only { */
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    .footer-text {
+      color: #0000ff;
+      background-color: #cccccc;
+    }
+  }
+}

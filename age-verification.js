@@ -7,8 +7,18 @@ modal_screen;
 
 var animated_bg = $(".animated-bg")
 // Start Working ASAP.
+// if(document.URL.indexOf("foo_page.html") >= 0){ 
 $(document).ready(function() {
-	av_legality_check();
+	// if(window.location.href === "https://seed-and-stone-2021.webflow.io/terms"){
+	if (window.location.href.indexOf("terms") > -1) {
+		$('.animated-bg').css({'display' : 'none'});
+	} else if (window.location.href.indexOf("purchase-terms") > -1){
+		$('.animated-bg').css({'display' : 'none'});
+		
+	} else {
+		av_legality_check();
+	}
+	
 });
 
 
