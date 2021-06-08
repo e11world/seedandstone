@@ -816,6 +816,10 @@ body::-webkit-scrollbar-thumb {
     padding-right: 20px;
     margin-left: -20px;
   }
+  .apple-fix-font-italic.centered {
+    padding-left: 20px;
+  }
+      
     
   @media screen and (max-width: 1920px) {
     /* body {

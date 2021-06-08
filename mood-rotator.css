@@ -483,6 +483,9 @@
   top: 90px;
   width: 100%;
   max-width: 1100px;
+  /* for firefox only it seems */
+  scrollbar-color: #ffda00 #fff;
+  scrollbar-width: thin;
 }
 
 .scrollbar::-webkit-scrollbar {
@@ -501,7 +504,7 @@
 @keyframes scaleIn {
   0% {
     transform: scale(1, 1);
-    opacity: ;
+    opacity: 0;
   }
   70% {
     opacity: 1;

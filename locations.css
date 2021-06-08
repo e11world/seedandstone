@@ -7,6 +7,9 @@
   overflow-x: scroll;
   overflow-y: hidden;
   padding-bottom: 50px;
+  /* for firefox only it seems */
+  scrollbar-color: #ffda00 #fff;
+  scrollbar-width: thin;
 }
 .scrollbar-horizontal::-webkit-scrollbar {
   height: 6px;
@@ -129,19 +132,19 @@ input {
     rgba(0, 0, 0, 0.5) no-repeat;
 }
 .loc-2 {
-  background: url(https://uploads-ssl.webflow.com/604bf2ef08cd1b653a122272/60a6a116375aad8a5266a4c8_finalComingsoon-storefrontimg-homepage.jpg)
+  background: url(https://uploads-ssl.webflow.com/604bf2ef08cd1b653a122272/60be55b4d637ef7ad847dbfc_tiny-comingsoon-storefrontimg-homepage.jpg)
     rgba(0, 0, 0, 0.5) no-repeat;
 }
 .loc-3 {
-  background: url(https://uploads-ssl.webflow.com/604bf2ef08cd1b653a122272/60a6a116375aad8a5266a4c8_finalComingsoon-storefrontimg-homepage.jpg)
+  background: url(https://uploads-ssl.webflow.com/604bf2ef08cd1b653a122272/60be55b4d637ef7ad847dbfc_tiny-comingsoon-storefrontimg-homepage.jpg)
     rgba(0, 0, 0, 0.5) no-repeat;
 }
 .loc-4 {
-  background: url(https://uploads-ssl.webflow.com/604bf2ef08cd1b653a122272/60a6a116375aad8a5266a4c8_finalComingsoon-storefrontimg-homepage.jpg)
+  background: url(https://uploads-ssl.webflow.com/604bf2ef08cd1b653a122272/60be55b4d637ef7ad847dbfc_tiny-comingsoon-storefrontimg-homepage.jpg)
     rgba(0, 0, 0, 0.5) no-repeat;
 }
 .loc-5 {
-  background: url(https://uploads-ssl.webflow.com/604bf2ef08cd1b653a122272/60a6a116375aad8a5266a4c8_finalComingsoon-storefrontimg-homepage.jpg)
+  background: url(https://uploads-ssl.webflow.com/604bf2ef08cd1b653a122272/60be55b4d637ef7ad847dbfc_tiny-comingsoon-storefrontimg-homepage.jpg)
     rgba(0, 0, 0, 0.5) no-repeat;
 }
 .location-info {
@@ -154,6 +157,7 @@ input {
   margin: 0 0 12px 0;
   padding: 0;
   font-size: 40px;
+  line-height: 1.1;
   font-weight: 500;
   transition: all 0.33s ease;
 }
