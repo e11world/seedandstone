@@ -4,7 +4,7 @@ const points = [
     latitude: 49.1483933,
     longitute: -122.0085082,
     class: "loc-1",
-    title: "Lickman Rd, Chilliwack",
+    title: "Lickman Rd,<br> Chilliwack",
     desc:
       "8050 Lickman Rd #103<br>Chilliwack, BC V2R 0Y3<br>604-392-7772",
   },
@@ -13,7 +13,7 @@ const points = [
     latitude: 49.035227,
     longitute: -122.7846575,
     class: "loc-2",
-    title: "Marine Drive, Whiterock",
+    title: "Marine Drive,<br> Whiterock",
     desc:
       "Marine Drive, Whiterock<br>Coming Soon",
   },
@@ -31,7 +31,7 @@ const points = [
     latitude: 48.423631,
     longitute: -123.367193,
     class: "loc-4",
-    title: "Gordon Street, Victoria",
+    title: "Gordon Street,<br> Victoria",
     desc:
       "Gordon Street, Victoria<br>Coming Soon",
   },
@@ -40,7 +40,7 @@ const points = [
     latitude: 48.424945,
     longitute: -123.367363,
     class: "loc-5",
-    title: "Fort Street, Victoria",
+    title: "Fort Street,<br> Victoria",
     desc:
       "Fort Street, Victoria<br>Coming Soon",
   },

@@ -7,15 +7,19 @@
   --hover-color: #ff7f30;
 }
 a[href^="mailto:"],
-a[href^="mailto:"]:link {
+a[href^="mailto:"]:link,
+.faq-answer a:link,
+.faq-answer a {
   color: var(--link-color);
 }
-a[href^="mailto:"]:hover {
+a[href^="mailto:"]:hover,
+.faq-answer a:hover {
   color: var(--hover-color);
 }
 a[href^="mailto:"]:active {
   color: var(--hover-color);
 }
+
 /*
 a:visited {
   color: var(--link-color) !important;
@@ -639,6 +643,31 @@ body::-webkit-scrollbar-thumb {
   }
 }
 @media screen and (max-width: 515px) {
+  .title-thin-thick {
+    font-size: 40px;
+    line-height: 40px;
+  }
+  .title-thin-thick.title-md {
+    font-size: 40px;
+    line-height: 44px;
+  }
+  .about-us-pg-header-desc-text {
+    font-size: 18px;
+  }
+  .job-title {
+    font-weight: 600;
+    margin: 0;
+  }
+  .pg-heading-title.faq-title {
+    font-size: 44px;
+    line-height: 56px;
+  }
+  .faq-desc {
+    font-size: 18px;
+  }
+  .positions-sec-title {
+    margin-bottom: 20px;
+  }
   .w-nav-overlay {
     /* position: static; */
     top: 0;
@@ -810,7 +839,6 @@ body::-webkit-scrollbar-thumb {
   }
 }*/
 
-
 @media not all and (min-resolution: 0.001dpcm) {
   .apple-fix-font-italic {
     padding-right: 20px;
@@ -819,18 +847,23 @@ body::-webkit-scrollbar-thumb {
   .apple-fix-font-italic.centered {
     padding-left: 20px;
   }
-      
-    
+
   @media screen and (max-width: 1920px) {
     /* body {
       background: red !important;
     } */
-    .container.nav-bar-container, .container, .hp-featured-posts-bg-container, .featured-blog-posts-header {
+    .container.nav-bar-container,
+    .container,
+    .hp-featured-posts-bg-container,
+    .featured-blog-posts-header {
       max-width: 1600px;
     }
-  }  
-  @media screen and (max-width: 1600px)  {
-    .container.nav-bar-container, .container, .hp-featured-posts-bg-container, .featured-blog-posts-header {
+  }
+  @media screen and (max-width: 1600px) {
+    .container.nav-bar-container,
+    .container,
+    .hp-featured-posts-bg-container,
+    .featured-blog-posts-header {
       max-width: 1400px;
     }
   }
@@ -838,18 +871,22 @@ body::-webkit-scrollbar-thumb {
     /* body {
       background: blue !important;
     } */
-      .container.nav-bar-container, .container, .hp-featured-posts-bg-container, .featured-blog-posts-header {
-        max-width: 1300px;
-      } 
+    .container.nav-bar-container,
+    .container,
+    .hp-featured-posts-bg-container,
+    .featured-blog-posts-header {
+      max-width: 1300px;
+    }
   }
-  @media screen and (max-width: 1280px)  {
-    .container.nav-bar-container, .container, .hp-featured-posts-bg-container, .featured-blog-posts-header {
+  @media screen and (max-width: 1280px) {
+    .container.nav-bar-container,
+    .container,
+    .hp-featured-posts-bg-container,
+    .featured-blog-posts-header {
       max-width: 1100px;
     }
   }
-
 }
-
 
 /*
 @media not all and (min-resolution: 0.001dpcm) and (max-width: 1920px)  {
@@ -869,18 +906,14 @@ body::-webkit-scrollbar-thumb {
 }
 */
 @media not all and (min-resolution: 0.001dpcm) {
-  
-  
   @supports (-webkit-appearance: none) {
-    
     @supports (-webkit-touch-callout: none) {
-      
     }
     @media screen and (max-width: 520px) {
       .scrollbar {
         overflow: scroll;
         overflow-x: hidden;
-      overflow-y: scroll;
+        overflow-y: scroll;
         /* min-height: 70vh;
         height: 70vh; */
         -webkit-overflow-scrolling: touch;
@@ -890,22 +923,22 @@ body::-webkit-scrollbar-thumb {
         left: 30px;
         /* margin-right: -20px; */
         margin-right: 0;
-      padding-right: 20px;
+        padding-right: 20px;
       }
       .mood-results {
         flex-direction: row-reverse;
       }
       .mood-item {
-          margin-right: 40px;
-          margin-left: 0px;
+        margin-right: 40px;
+        margin-left: 0px;
       }
       .disclaimer-notice {
-          margin-left: 0px;
-          padding-right: 20px;
+        margin-left: 0px;
+        padding-right: 20px;
       }
       .custom-scrollbar-container {
-          right: 10px;
-          max-width: 50px;
+        right: 10px;
+        max-width: 50px;
       }
     }
     /*.scrollbar,
