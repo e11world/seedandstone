@@ -31,7 +31,8 @@ av_legality_check = function() {
 		$('.vanta-canvas').css({'display' : 'none'});
 	} else {
 		av_showmodal();
-		$('body').css({'overflow-y':'auto', 'position': 'fixed', 'height' : '100vh', 'opacity' : '1'});
+		$('body').css({'overflow-y':'hidden', 'height' : '100vh'});
+		// $('body').css({'overflow-y':'hidden', 'position': 'fixed', 'height' : '100vh', 'opacity' : '1'});
 		$('.animated-bg').css({'opacity' : '1'});
 		// Make sure the prompt stays in the middle.
 		// $(window).on('resize', av_positionPrompt);
