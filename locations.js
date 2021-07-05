@@ -33,7 +33,7 @@ const points = [
     class: "loc-4",
     title: "Gordon Street,<br> Victoria",
     desc:
-      "Gordon Street, Victoria<br>Coming Soon",
+      "901 Gordon St<br>Victoria, BC V8W 3P9<br>250-590-7583",
   },
   {
     id: 4,
