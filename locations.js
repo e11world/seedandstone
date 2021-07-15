@@ -44,6 +44,15 @@ const points = [
     desc:
       "Fort Street, Victoria<br>Coming Soon",
   },
+  {
+    id: 5,
+    latitude: 49.1706821,
+    longitute: -122.9479117,
+    class: "loc-6",
+    title: "Chestler Road,<br> Delta",
+    desc:
+      "Chestler Rd, Delta<br>Coming Soon",
+  },
   /*
   {
     id: 1,
@@ -89,6 +98,7 @@ const names = {
   // 2: "White Rock",
   3: "Gordon Street, Victoria",
   4: "Fort Street, Victoria",
+  5: "Chestler Rd, Delta",
 };
 
 var side_bar_html = "";
