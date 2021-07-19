@@ -642,6 +642,16 @@ body::-webkit-scrollbar-thumb {
     max-width: 100%;
   }
 }
+
+@media screen and (max-width: 768px) {
+.w-nav-overlay {
+    /* position: static; */
+    top: 0;
+  }
+  .nav-menu {
+    height: 100vh;
+  }
+}
 @media screen and (max-width: 515px) {
   .title-thin-thick {
     font-size: 40px;
@@ -668,13 +678,7 @@ body::-webkit-scrollbar-thumb {
   .positions-sec-title {
     margin-bottom: 20px;
   }
-  .w-nav-overlay {
-    /* position: static; */
-    top: 0;
-  }
-  .nav-menu {
-    height: 100vh;
-  }
+  
   .disclaimer-details-text,
   .read-more-link-disclaimer {
     display: inline;

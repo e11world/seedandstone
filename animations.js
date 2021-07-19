@@ -10,14 +10,20 @@ function internalLink(myLink) {
 }
 $('a').each(function() {
   if (internalLink(this) && (this).href.indexOf('#') === -1) {
-  $(this).click(function(e){
-  e.preventDefault();
-  var moduleURL = jQuery(this).attr("href");
-  setTimeout( function() { window.location = moduleURL }, 700 );
-  // Class that has page out interaction tied to click
-  $('.page-transition').click();
-});
-    }
+    $(this).click(function(e){
+      e.preventDefault();
+      var moduleURL = jQuery(this).attr("href");
+      setTimeout( function() { window.location = moduleURL }, 700 );
+      // Class that has page out interaction tied to click
+      $('.page-transition').click();
+    });
+  }
+  // if (internalLink(this) && (this).href.indexOf('#shop') === -1) {
+  //   $(this).click(function(e){
+  //     console.log('SHOPPPPPP SUBNAV');
+  //   });
+  // }
+
 });
 
 
