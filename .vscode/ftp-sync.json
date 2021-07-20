@@ -1,12 +1,12 @@
 {
-    "remotePath": "/seedandstone.com/public_html/dev/webflow/",
-    "host": "seedandstone.com",
-    "username": "admin@seedandstone.com",
+    "remotePath": "/public_html",
+    "host": "c43365.sgvps.net",
+    "username": "live@seedandstone.com",
     "password": "s1t3zPa55w0rd!SE",
     "port": 21,
     "secure": false,
     "protocol": "ftp",
-    "uploadOnSave": false,
+    "uploadOnSave": true,
     "passive": false,
     "debug": false,
     "privateKeyPath": null,
@@ -21,6 +21,7 @@
     "generatedFiles": {
         "extensionsToInclude": [
             ""
+            /*  [".js", ".css"] */
         ],
         "path": ""
     }
