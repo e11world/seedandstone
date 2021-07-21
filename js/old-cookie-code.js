@@ -29,20 +29,15 @@ show_delivery_notice_banner = function() {
 	// banner_wrapper.append(content_heading, content_buttons);
 	
     var banner_popup = document.createElement("div")
-    banner_popup.classList.add('notice-content')
-    var noticeText = 'Delivering Now. Shop online or call <a href="tel:+18885757333" class="notice-link"><strong><em class="italic-text-2">888 575-7333</em></strong></a><strong class="bold-text-2"><em class="italic-text-3"> to place your order.</em></strong>';
-    var actionBtn = document.createElement("p");
-    actionBtn.innerHTML = '<a href="/shop?dtche%5Bpath%5D=locations" class="notice-link notice-btn-action"><strong><em class="italic-text">Shop Now</em></strong></a>';
-    var closeBtn = '<div class="notice-close-btn"><a href="#" class="btn-x w-inline-block"><img src="https://uploads-ssl.webflow.com/604bf2ef08cd1b653a122272/607f4b951fa7c436d0f0fb5f_plus.svg" alt="Plus Icon" class="close-x" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(45deg) skew(0deg, 0deg); transform-style: preserve-3d;"></a></div>';
+    var newHeading = "<h1>Important Note:</h1>";
+    var newParagraph = document.createElement("p");
+    newParagraph.innerHTML = "<em>Lorem Ipsum is dummy text...</em>";
 
-    $(banner_popup).slideDown('2500');
     $("body").prepend(banner_popup);
-    $(banner_popup).wrap('<div class="notice top-banner-notice"></div>').parent();
-    $(banner_popup).append('<div class="notice-text">'+noticeText+actionBtn.innerHTML,closeBtn+'</div>');
-    // $(newHeading).append(newImage);
-    // $(banner_popup).append(newHeading, newParagraph);
+    $(banner_popup).wrap('<div class="top_banner_wrapper"></div>').parent();
+    $(banner_popup).append(newHeading, newParagraph);
 	// var banner_top_content = $('<div id="banner_top_content" class="banner_top_content"></div>');
-    var newImage = $('<img src="images/smiley.png" alt="Symbol">');
+    // var newImage = $('<img src="images/smiley.png" alt="Symbol">');
     // $("body").append(newHeading, newImage);
 
 	// Append the prompt to the end of the document
@@ -59,18 +54,18 @@ banner_setCookie = function() {
 	// e.preventDefault();
 
 	// var delivery_notice_banner = $(e.currentTarget).attr('rel');
-    // var delivery_notice_banner = $(banner_popup).parent();
+    var delivery_notice_banner = $(banner_popup).parent();
 
     // var inFifteenMinutes = new Date(new Date().getTime() + 15 * 60 * 1000);
     var inFifteenSeconds = new Date(new Date().getTime() + 10 * 1000);
 
 
-    var date = new Date();
-    date.setTime(date.getTime() + (8 * 1000));
+    // var date = new Date();
+    // date.setTime(date.getTime() + (8 * 1000));
 
 	$.cookie('delivery_notice_banner', 'yes', {
-		// expires: 1,
-		expires: date,
+		expires: 1,
+		// expires: date,
 		path: '/'
 	});
 
@@ -82,16 +77,10 @@ banner_setCookie = function() {
 	// }
 };
 
-$('.top-banner-notice .notice-close-btn a.btn-x img').click(function() {
-    hide_delivery_notice_banner();
-});
-
 hide_delivery_notice_banner = function() {
-    console.log('will hide it');
+    // console.log('will hide it');
     // $.cookie("yes", null);
 }
-
-
 /*
 
 hide_delivery_notice_banner = function() {
