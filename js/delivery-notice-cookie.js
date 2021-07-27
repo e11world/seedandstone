@@ -5,29 +5,25 @@ var banner_popup, sidebar_popup;
 
 $(document).ready(function(){
     check_cookie_delivery_notice_banner();
+    check_cookie_delivery_notice_sidebar_popup();
 });
 check_cookie_delivery_notice_banner = function() {
-	// if ($.cookie('delivery_notice_banner') == "yes") {
-	// if ($.cookie('delivery_notice_banner') && $.cookie('delivery_notice_banner') == "yes") {
 	if ($.cookie('delivery_notice_banner')) {
-    // if (!!$.cookie('delivery_notice_banner')) {
 		hide_delivery_notice_banner();
-        // console.log('hide_delivery_notice_banner');
 	} else {
 		show_delivery_notice_banner();
-        // console.log('show_delivery_notice_banner 1st check');
-		// $('body').css({'overflow-y':'hidden', 'position': 'fixed', 'height' : '100vh', 'opacity' : '1'});
+	}
+};
+
+check_cookie_delivery_notice_sidebar_popup = function() {
+	if ($.cookie('delivery_notice_sidebar_popup')) {
+		hide_delivery_notice_sidebar_popup();
+	} else {
+		show_delivery_notice_sidebar_popup();
 	}
 };
 
 show_delivery_notice_banner = function() {
-
-    // Add content before an element with ID container
-    // $("#container").before("<p>&mdash; The Beginning &mdash;</p>");
-	// var content_heading = $('<h2>Are you 19 or older?</h2>');
-	// var content_buttons = $('<nav><ul><li><a href="#nothing" class="av_btn av_go" rel="yes">Yes</a></li><li><a href="#nothing" class="av_btn av_no" rel="no">No</a></li></nav>');
-	// banner_wrapper.append(content_heading, content_buttons);
-	
     var banner_popup = document.createElement("div")
     banner_popup.classList.add('notice-content')
     var noticeText = 'Delivering Now. Shop online or call <a href="tel:+18885757333" class="notice-link"><strong><em class="italic-text-2">888 575-7333</em></strong></a><strong class="bold-text-2"><em class="italic-text-3"> to place your order.</em></strong>';
@@ -35,78 +31,94 @@ show_delivery_notice_banner = function() {
     actionBtn.innerHTML = '<a href="/shop?dtche%5Bpath%5D=locations" class="notice-link notice-btn-action"><strong><em class="italic-text">Shop Now</em></strong></a>';
     var closeBtn = '<div class="notice-close-btn"><a href="#" class="btn-x w-inline-block"><img src="https://uploads-ssl.webflow.com/604bf2ef08cd1b653a122272/607f4b951fa7c436d0f0fb5f_plus.svg" alt="Plus Icon" class="close-x" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(45deg) skew(0deg, 0deg); transform-style: preserve-3d;"></a></div>';
 
-    $(banner_popup).slideDown('2500');
-    $("body").prepend(banner_popup);
-    $(banner_popup).wrap('<div class="notice top-banner-notice"></div>').parent();
-    $(banner_popup).append('<div class="notice-text">'+noticeText+actionBtn.innerHTML,closeBtn+'</div>');
-    // $(newHeading).append(newImage);
-    // $(banner_popup).append(newHeading, newParagraph);
-	// var banner_top_content = $('<div id="banner_top_content" class="banner_top_content"></div>');
-    var newImage = $('<img src="images/smiley.png" alt="Symbol">');
-    // $("body").append(newHeading, newImage);
-
-	// Append the prompt to the end of the document
-	// $('.cookiez').fadeIn('1500');
-	// $('.cookiez').append(sidebar_popup, banner_popup);
-	// $('.cookiez .banner_popup').fadeIn('1500');
-	// $('.cookiez').prepend(animated_bg);
+    setTimeout(function(){
+        $("body").prepend( $(banner_popup).hide().delay(500).show('slow') );
+        $(banner_popup).wrap('<div class="notice top-banner-notice"></div>').parent();
+        $(banner_popup).append('<div class="notice-text">'+noticeText+actionBtn.innerHTML,closeBtn+'</div>');
+        $(banner_popup).slideDown('900');
+    }, 2000);
 
     banner_setCookie();
-	// banner_popup.find('a.av_btn').on('click', banner_setCookie);
-
 };
 banner_setCookie = function() {
-	// e.preventDefault();
-
-	// var delivery_notice_banner = $(e.currentTarget).attr('rel');
-    // var delivery_notice_banner = $(banner_popup).parent();
-
-    // var inFifteenMinutes = new Date(new Date().getTime() + 15 * 60 * 1000);
-    var inFifteenSeconds = new Date(new Date().getTime() + 10 * 1000);
-
 
     var date = new Date();
-    date.setTime(date.getTime() + (8 * 1000));
+    date.setTime(date.getTime() + (11 * 1000));
 
 	$.cookie('delivery_notice_banner', 'yes', {
-		// expires: 1,
-		expires: date,
+		expires: 1,
+		// expires: date,
 		path: '/'
 	});
-
-	// if (delivery_notice_banner == "yes") {
-	// 	hide_delivery_notice_banner();
-    //     console.log('hide_delivery_notice_banner');
-	// } else {
-    //     console.log('show_delivery_notice_banner end');
-	// }
 };
 
-$('.top-banner-notice .notice-close-btn a.btn-x img').click(function() {
-    hide_delivery_notice_banner();
-});
-
 hide_delivery_notice_banner = function() {
-    console.log('will hide it');
-    // $.cookie("yes", null);
+    $('.top-banner-notice').remove();
 }
 
+setTimeout(function(){
+    $('.top-banner-notice').slideUp(600, function() { $(this).remove(); } );
+}, 11000);
 
-/*
 
-hide_delivery_notice_banner = function() {
-	banner_popup.fadeOut("slow", function() {
-        banner_popup.attr("style", "display: none !important");
-    });
-	// animated_bg.find('.cookiez').fadeOut(1000);
+// $(document).ready(function(){
+//     $('.notice-close-btn .btn-x').click(function() {
+//         console.log('notice-close-btn btn x hide it');
+//         // $('.top-banner-notice').slideUp(600, function() { $(this).remove(); } );
+//     });
+// });
+$(document).on("click", ".notice-close-btn .btn-x", function(){
+        $('.top-banner-notice').slideUp(600, function() { $(this).remove(); } );
+});
 
-	$(this).delay(1000).queue(function() { 
-		hide_delivery_notice_banner();
-     $(this).dequeue();
 
-  });
+
+
+
+
+
+
+show_delivery_notice_sidebar_popup = function() {
+    var sidebar_popup = document.createElement("div")
+    sidebar_popup.classList.add('popup-inner')
+    var noticeText = '<img src="https://uploads-ssl.webflow.com/604bf2ef08cd1b653a122272/60d3a5622b090254d48346c2_seedandstone-logo.svg" loading="lazy" alt="" class="popup-logo"><h4 class="popup-title"><span class="popup-title-bold">Delivering</span>Now</h4><div class="popup-text">Free <span class="popup-text-special">same-day delivery</span> on applicable orders<span class="popup-text-special"></span></div><a href="/shop?dtche%5Bpath%5D=locations" class="popup-btn-action w-inline-block"><div class="popup-action-btn-text">View Menu</div></a>';
+    var actionBtn = document.createElement("p");
+    actionBtn.innerHTML = '<img src="https://uploads-ssl.webflow.com/604bf2ef08cd1b653a122272/60d3a5622b090254d48346c2_seedandstone-logo.svg" loading="lazy" alt="" class="popup-logo">';
+    var closeBtn = '<a href="#" class="popup-btn-close w-inline-block"><div class="popup-btn-close-text">Close</div><img src="https://uploads-ssl.webflow.com/604bf2ef08cd1b653a122272/607f4b951fa7c436d0f0fb5f_plus.svg" loading="lazy" alt="Plus Icon" class="popup-x"></a>';
+
+    setTimeout(function(){
+        $("body").prepend( $(sidebar_popup).hide().delay(500).show('slow').css("display", "block") );
+        $(sidebar_popup).wrap('<div class="pinned-popup pinned-popup-notice popup-delivery"></div>').parent();
+        $(sidebar_popup).append('<div class="notice-text">'+closeBtn+noticeText+'</div>');
+        // $(sidebar_popup).slideDown('900');
+        $('.popup-inner .notice-text').css({"textAlign":"right","display":"flex","flexDirection":"column"});
+        // $('.pinned-popup.popup-delivery').attr('style', 'display: block !important');
+    // $('.pinned-popup.popup-delivery').fadeIn(500).css("display", "block !important").show();
+    // $('.pinned-popup.popup-delivery').css("display", "block !important");
+    $('.pinned-popup.popup-delivery').addClass('animate-sidebar-popup');
+    }, 5000);
+
+    sidebar_popup_setCookie();
 };
-*/
-// hide_delivery_notice_banner = function() {
+sidebar_popup_setCookie = function() {
+    var date = new Date();
+    date.setTime(date.getTime() + (11 * 1000));
 
-// };
+	$.cookie('delivery_notice_sidebar_popup', 'yes', {
+		expires: 1,
+		// expires: date,
+		path: '/'
+	});
+};
+
+hide_delivery_notice_sidebar_popup = function() {
+    $('.pinned-popup-notice').remove();
+}
+
+setTimeout(function(){
+    $('.pinned-popup-notice').slideUp(600, function() { $(this).remove(); } );
+}, 25000);
+
+$(document).on("click", ".pinned-popup-notice .popup-btn-close", function(){
+        $('.pinned-popup-notice').slideUp(600, function() { $(this).remove(); } );
+});

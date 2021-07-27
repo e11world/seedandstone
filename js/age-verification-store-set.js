@@ -5,11 +5,12 @@
 var modal_content,
 modal_screen;
 
-// var animated_bg = $(".animated-bg")
+var animated_bg = $(".animated-bg")
 // Start Working ASAP.
 // if(document.URL.indexOf("foo_page.html") >= 0){ 
 $(document).ready(function() {
 	// if(window.location.href === "https://seed-and-stone-2021.webflow.io/terms"){
+    // $('.animated-bg').css({'display' : 'none'});
 	if (window.location.href.indexOf("terms") > -1) {
 		$('.animated-bg').css({'display' : 'none'});
 	} else if (window.location.href.indexOf("purchase-terms") > -1){
@@ -19,9 +20,92 @@ $(document).ready(function() {
 		av_legality_check();
 	}
 
+	// if (window.location.href.indexOf("terms") > -1) {
+	if (window.location.origin + "/" == window.location.href ) {	
+		console.log('home page');
+        
+	    store_selection = $('<div class="store-selection"><a href="#chilliwack" class="store-chilliwack" rel="chilliwack"><h3>chilliwack</h3> | <a href="#victoria" class="store-chilliwack" rel="victoria"><h3>victoria</h3></div>');
+        
+	    $('#modal_content_wrapper').append(store_selection);
+
+        
+    	store_selection.find('a').on('click', setStoreSelectionCookie);
+
+
+        // if ($.cookie('clickotV') == 1) {
+
+        // }
+
+
+        // $(this).html().replace(/shop?dtche%5Bpath%5D=locations/g,"colour");
+
+        // $("body").children().each(function() {           
+        //     $(this).html($(this).html().replace(/shop?dtche%5Bproduct%5D=/g,"aaaa"));
+        // });
+        
+        // $('#id1').text(function(index, oldText) {
+        //     return oldText.replace(/dog/g, 'doll');
+        // })
+
+	// 	// $('.animated-bg').css({'display' : 'none'});
+	// } else if (window.location.href.indexOf("purchase-terms") > -1){
+	// 	$('.animated-bg').css({'display' : 'none'});
+	} else {
+		console.log('NOT home page');
+	}
 	
 });
 
+setStoreSelectionCookie = function(e) {
+	e.preventDefault();
+
+	var store_location_selected = $(e.currentTarget).attr('rel');
+
+    var date = new Date();
+    date.setTime(date.getTime() + (11 * 1000));
+
+    // var country = Cookies && Cookies.get('deliveryOption') || 'country1';
+
+	// https://www.seedandstone.com/shop?dtche%5Bpath%5D=locations
+    // https://www.seedandstone.com/shop?dtche%5Bproduct%5D=citizen-stash-mac-1
+    // https://www.seedandstone.com/shop?dtche%5Bsubcategories%5D=drinks&dtche%5Bcategory%5D=edibles
+    // https://www.seedandstone.com/shop-chilliwack?dtche%5Bcategory%5D=vaporizers
+    // https://www.seedandstone.com/shop?dtche%5Bcategory%5D=vaporizers&dtche%5Blocation%5D=seed-and-stone1
+    // https://www.seedandstone.com/shop?dtche%5Bcategory%5D=vaporizers&dtche%5Blocation%5D=seed-and-stone-victoria-gordon-st
+
+		av_closeModal();
+    if (store_location_selected == "") {
+        $.cookie('store_location_selected', store_location_selected, {
+            // expires: 30,
+            expires: date,
+            path: '/'
+        });
+        av_closeModal();
+    }
+	if (store_location_selected == "victoria") {
+        console.log('store is victoria');
+        $.cookie('store_location_selected', store_location_selected, {
+            // expires: 30,
+            expires: date,
+            path: '/'
+        });
+        
+	} 
+	if (store_location_selected == "chilliwack") {
+        console.log('store is chilliwack');
+        $.cookie('store_location_selected', store_location_selected, {
+            // expires: 30,
+            expires: date,
+            path: '/'
+        });
+	} 
+};
+
+// deleteCookie("myCookie");
+//delete cookie
+function deleteCookie(name) {
+     setCookie(name,"",-1);
+ }
 
 av_legality_check = function() {
 	if ($.cookie('is_legal_age') == "yes") {
@@ -40,8 +124,9 @@ av_legality_check = function() {
 	}
 };
 
+
 av_showmodal = function() {
-	// animated_bg = $('<div id="animated-bg"></div>');
+	animated_bg = $('<div id="animated-bg"></div>');
 	modal_screen = $('<div id="modal_screen"></div>');
 	modal_content = $('<div id="modal_content"></div>');
 	var modal_content_wrapper = $('<div id="modal_content_wrapper" class="content_wrapper"></div>');
@@ -104,7 +189,7 @@ av_closeModal = function() {
 	// animated_bg.find('.cookiez').fadeOut(1000);
 
 	$(this).delay(1000).queue(function() { 
-		// hide_animated_bg();
+		hide_animated_bg();
      $(this).dequeue();
 
   });
@@ -117,10 +202,10 @@ av_showRegret = function() {
 	
 };
 
-// hide_animated_bg = function() {
-// 	animated_bg.hide();
-// 	$(".animated-bg").css({display:"none"});
-// };
+hide_animated_bg = function() {
+	animated_bg.hide();
+	$(".animated-bg").css({display:"none"});
+};
 
 av_positionPrompt = function() {
 	// var top = ($(window).outerHeight() - $('#modal_content').outerHeight()) / 2;
