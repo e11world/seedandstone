@@ -37,6 +37,10 @@
   justify-content: center;
   align-items: center;
   background: #141414;
+  /* pointer-events: none; */
+}
+.animated-bg.no-click {
+  pointer-events: none;
 }
 .cookiez {
   position: relative;
